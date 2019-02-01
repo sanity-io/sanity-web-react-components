@@ -1,0 +1,35 @@
+.title1 {
+  font-size: var(--font-title1-size);
+  line-height: var(--font-title1-line-height);
+}
+
+.title2 {
+  font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height);
+}
+
+.title3 {
+  font-size: var(--font-title3-size);
+  line-height: var(--font-title3-line-height);
+}
+
+.large {
+  font-size: var(--font-large-size);
+  line-height: var(--font-large-line-height);
+}
+
+.base {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.small {
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
+}
+
+.micro {
+  font-size: var(--font-micro-size);
+  line-height: var(--font-micro-line-height);
+  text-transform: uppercase;
+}

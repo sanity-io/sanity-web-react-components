@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es5",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "lib": ["dom", "es6"],
+    "rootDir": "src",
+    "jsx": "react",
+    "declaration": false,
+    "downlevelIteration": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "strict": true,
+    "strictNullChecks": true
+  },
+  "include": ["src/*/stories.tsx", "src/index.ts", "ts/types.d.ts"]
+}

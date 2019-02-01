@@ -1,0 +1,45 @@
+.root {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background: #eee;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 0;
+  overflow: hidden;
+
+  @nest & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @nest &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-shade1);
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+}
+
+.small {
+  composes: root;
+  width: 32px;
+  height: 32px;
+}
+
+.large {
+  composes: root;
+  width: 64px;
+  height: 64px;
+}

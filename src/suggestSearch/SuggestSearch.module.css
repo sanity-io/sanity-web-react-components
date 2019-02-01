@@ -1,0 +1,72 @@
+.root {
+  position: relative;
+  height: 44px;
+}
+
+.container {
+  background: color-mod(var(--color-gray) alpha(10%));
+  border-radius: 4.5px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  padding: 1px;
+  box-sizing: border-box;
+}
+
+.closed {
+  composes: root;
+}
+
+.open {
+  composes: root;
+}
+
+.openWithResults {
+  composes: root;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.inner {
+  border-radius: 4px;
+  transition: background 200ms, box-shadow 200ms;
+
+  @nest .openWithResults & {
+    background: var(--color-white);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  @nest .open & {
+    background: var(--color-white);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.input {
+  -webkit-font-smoothing: inherit;
+  outline: none;
+  appearance: none;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-line-height);
+  width: 100%;
+  box-sizing: border-box;
+  padding: calc(var(--padding-small) + 1px);
+}
+
+.results {
+  background: var(--color-white);
+  display: none;
+  max-height: 180px;
+  overflow: auto;
+
+  @nest .openWithResults & {
+    display: block;
+    border-top: 1px solid var(--color-shade2);
+  }
+}

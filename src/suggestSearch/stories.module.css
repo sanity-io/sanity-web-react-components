@@ -1,0 +1,11 @@
+.resultItem {
+  @nest & a {
+    display: block;
+    padding: calc(var(--padding-small) + 1px);
+    text-decoration: none;
+
+    @nest &:hover {
+      background: #def;
+    }
+  }
+}

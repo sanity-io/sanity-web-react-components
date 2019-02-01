@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+}
+
+.description {
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 0.8em;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  margin-right: 1em;
+  border: 2px solid #000;
+
+  @nest .root[data-status="completed"] & {
+    background-color: #000;
+    color: #fff;
+  }
+}

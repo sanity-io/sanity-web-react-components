@@ -1,0 +1,132 @@
+.root {
+  color: var(--color-gray);
+  border-top: 1px solid var(--color-shade2);
+  padding: var(--padding-large) var(--padding-medium);
+
+  @media (--media-min-small) {
+    padding: var(--padding-x-large) var(--padding-large);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--padding-large);
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: var(--width-large);
+
+  @media (--media-min-small) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (--media-min-medium) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (--media-min-large) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.cell {
+  text-align: center;
+
+  @nest & h2 {
+    font-size: var(--font-large-size);
+    line-height: var(--font-large-line-height);
+    margin: 0 0 var(--padding-small);
+  }
+
+  @nest & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @nest & a {
+    text-decoration: none;
+    transition: color 200ms;
+
+    @media (hover: hover) {
+      @nest &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  @nest & li a {
+    display: block;
+    padding: var(--padding-x-small) 0;
+  }
+}
+
+.systemStatus {
+  text-align: center;
+  margin: var(--padding-x-large) 0;
+
+  @nest & span {
+    position: relative;
+    top: -1px;
+  }
+}
+
+.systemUp {
+  composes: systemStatus;
+
+  @nest & span {
+    color: #56CC7E;
+  }
+}
+
+.systemPartiallyDown {
+  composes: systemStatus;
+
+  @nest & span {
+    color: #EBD666;
+  }
+}
+
+.systemDown {
+  composes: systemStatus;
+
+  @nest & span {
+    color: var(--color-accent);
+  }
+}
+
+.bottomLine {
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
+  text-align: center;
+
+  @nest & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @nest & li > a {
+    text-decoration: none;
+    display: inline-block;
+    padding: var(--padding-x-small) var(--padding-small);
+
+    @media (hover: hover) {
+      @nest &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  @nest & li > span {
+    display: inline-block;
+    padding: var(--padding-x-small);
+  }
+
+  @media (--media-min-small) {
+    @nest & ul {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.root {
+  @nest & :global(.lowlight) {
+    font-family: var(--font-monospace);
+  }
+}

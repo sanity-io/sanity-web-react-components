@@ -1,0 +1,12 @@
+.root {
+  fill: currentColor;
+  height: 1em;
+}
+
+.half {
+  opacity: 0.5;
+}
+
+.quarter {
+  opacity: 0.25;
+}
