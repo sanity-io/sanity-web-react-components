@@ -1,7 +1,5 @@
 import * as React from 'react'
 
-import * as styles from './Button.module.css'
-
 interface BaseProps {
   children: any
   disabled?: boolean
@@ -25,7 +23,7 @@ const noop = () => void 0
 const Button = (props: Props) => {
   const { children, onClick, disabled } = props
   const commonProps = {
-    className: `sanity-button ${styles.root}`,
+    className: `sanity-button`,
     onClick: !disabled ? onClick : noop,
   }
   if (props.size === 'large') commonProps.className += ` sanity-button--large`
