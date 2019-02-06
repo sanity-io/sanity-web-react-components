@@ -1,24 +1,24 @@
 import { configure, addDecorator } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
-import { withPropsTable } from 'storybook-addon-react-docgen'
+// // import { withPropsTable } from 'storybook-addon-react-docgen'
 import { withOptions } from '@storybook/addon-options'
-import { sanity as sanityTheme } from './themes'
+// import { sanity as sanityTheme } from './themes'
 
 import './layout.css'
 
 addDecorator(
   withOptions({
-    name: 'Web Components',
+    name: 'sanity-web-react-components',
     url: 'https://www.sanity.io',
-    theme: sanityTheme,
+    // theme: sanityTheme,
   }),
 )
 
 addDecorator(withKnobs)
-addDecorator(withPropsTable)
+// addDecorator(withPropsTable)
 
-// automatically import all files ending in *.stories.tsx
-const req = require.context('..', true, /.stories.tsx$/)
+// automatically import src/**/*/stories.tsx
+const req = require.context('..', true, /\/stories.tsx$/)
 
 function loadStories() {
   req.keys().forEach(req)

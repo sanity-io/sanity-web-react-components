@@ -6,7 +6,7 @@ import centered from '@storybook/addon-centered'
 import ServiceConnect from './ServiceConnect'
 import { Avatar } from '../'
 
-const stories = storiesOf('ServiceConnect', module)
+const stories = storiesOf('components/ServiceConnect', module)
 
 stories.addDecorator(centered)
 

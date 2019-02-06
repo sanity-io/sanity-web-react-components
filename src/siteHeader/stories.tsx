@@ -4,7 +4,7 @@ import SiteHeader from './SiteHeader'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-const stories = storiesOf('Layout', module)
+const stories = storiesOf('components/Layout', module)
 
 stories.add('Site header', () => {
   return (

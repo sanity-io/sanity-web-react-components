@@ -4,7 +4,7 @@ import centered from '@storybook/addon-centered'
 import { select } from '@storybook/addon-knobs'
 import { Icon } from './'
 
-const stories = storiesOf('Icons', module)
+const stories = storiesOf('components/Icons', module)
 
 stories.addDecorator(centered)
 

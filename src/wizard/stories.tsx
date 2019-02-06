@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import WizardStep, { Props as StepProps } from './WizardStep'
 import WizardSteps from './WizardSteps'
 
-const stories = storiesOf('Wizard', module)
+const stories = storiesOf('components/Wizard', module)
 
 const step: StepProps = {
   title: 'Step',

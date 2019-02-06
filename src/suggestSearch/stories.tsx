@@ -7,7 +7,7 @@ import { storiesOf } from '@storybook/react'
 import { text, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
-const stories = storiesOf('Suggest search', module)
+const stories = storiesOf('components/SuggestSearch', module)
 
 const mockResults = [{ key: 'a' }, { key: 'b' }, { key: 'c' }, { key: 'd' }, { key: 'e' }]
 

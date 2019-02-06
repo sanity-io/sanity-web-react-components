@@ -5,7 +5,7 @@ import centered from '@storybook/addon-centered'
 
 import StringInput from './StringInput'
 
-const stories = storiesOf('Input', module)
+const stories = storiesOf('components/Input', module)
 
 stories.addDecorator(centered)
 

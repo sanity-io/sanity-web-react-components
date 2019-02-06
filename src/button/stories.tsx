@@ -5,7 +5,7 @@ import centered from '@storybook/addon-centered'
 import { action } from '@storybook/addon-actions'
 import Button from './Button'
 
-const stories = storiesOf('Button', module)
+const stories = storiesOf('components/Button', module)
 
 stories.addDecorator(centered)
 

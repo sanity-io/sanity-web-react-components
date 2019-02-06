@@ -4,7 +4,7 @@ import { select, text } from '@storybook/addon-knobs'
 import centered from '@storybook/addon-centered'
 import Code from './Code'
 
-const stories = storiesOf('Code', module)
+const stories = storiesOf('components/Code', module)
 
 stories.addDecorator(centered)
 

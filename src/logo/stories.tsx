@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import centered from '@storybook/addon-centered'
 import SanityLogo from './SanityLogo'
 
-const stories = storiesOf('Logo', module)
+const stories = storiesOf('components/Logo', module)
 
 stories.addDecorator(centered)
 
