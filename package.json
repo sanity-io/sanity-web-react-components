@@ -26,14 +26,14 @@
     "postcss-cjs": "mkdirp lib/cjs && postcss src/**/*.css --base src --dir lib/cjs/",
     "postcss-es": "mkdirp lib/es && postcss src/**/*.css --base src --dir lib/es/",
     "prepublishOnly": "npm run build",
+    "storybook": "start-storybook -p 6006 -c ./storybook -s ./storybook/static",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc-cjs": "tsc -p ts/tsconfig.cjs.json",
     "tsc-es": "tsc -p ts/tsconfig.es.json",
     "watch-postcss-cjs": "mkdirp lib/cjs && postcss -w src/**/*.css --base src --dir lib/cjs/",
     "watch-postcss-es": "mkdirp lib/es && postcss -w src/**/*.css --base src --dir lib/es/",
     "watch-tsc-cjs": "tsc -w -p ts/tsconfig.cjs.json",
-    "watch-tsc-es": "tsc -w -p ts/tsconfig.es.json",
-    "storybook": "start-storybook -p 6006 -c ./storybook"
+    "watch-tsc-es": "tsc -w -p ts/tsconfig.es.json"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
