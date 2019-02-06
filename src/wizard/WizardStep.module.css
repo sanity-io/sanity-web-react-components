@@ -6,6 +6,7 @@
 .title {
   margin: 0;
   padding: 0;
+  composes: sanity-title4 from global;
 }
 
 .description {
@@ -24,6 +25,11 @@
   height: 3em;
   margin-right: 1em;
   border: 2px solid #000;
+
+  @nest .root[data-status="completed"] & {
+    background-color: #000;
+    color: #fff;
+  }
 
   @nest .root[data-status="completed"] & {
     background-color: #000;

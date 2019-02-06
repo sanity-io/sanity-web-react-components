@@ -4,7 +4,7 @@ import * as css from './WizardStep.module.css'
 export interface Props {
   title: string
   label?: string
-  status?: 'completed' | 'active'
+  status?: 'completed' | 'active' | 'none'
   description?: JSX.Element | string
 }
 

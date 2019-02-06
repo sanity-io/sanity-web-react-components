@@ -130,7 +130,6 @@
 
   @nest & a:not(:global(.sanity-button)) {
     display: block;
-    color: inherit;
     text-decoration: none;
     color: var(--color-black);
   }
