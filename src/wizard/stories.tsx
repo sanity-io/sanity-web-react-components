@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { number, text, select } from '@storybook/addon-knobs'
+import { number, text, select, boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
+import centered from '@storybook/addon-centered'
 import WizardStep, { Props as StepProps } from './WizardStep'
 import WizardSteps from './WizardSteps'
 
@@ -12,29 +13,38 @@ const step: StepProps = {
 }
 
 stories.add('Steps', () => {
-  const steps = [...Array(number('steps', 5))].map(() => ({ ...step }))
+  const steps = [...Array(number('steps', 3))].map(() => ({ ...step }))
+  const showDescription = boolean('show description', false)
+  const status = select('status', ['active', 'completed', 'none'], 'none')
   return (
     <WizardSteps>
       {steps.map((step, i) => (
-        <WizardStep {...step} label={`${i + 1}`} />
+        <WizardStep
+          {...step}
+          description={showDescription ? step.description : undefined}
+          label={`${i + 1}`}
+          status={status}
+        />
       ))}
     </WizardSteps>
   )
 })
 
 stories.add('Steps example', () => {
+  const showDescription = boolean('show description', false)
   return (
     <WizardSteps>
-      <WizardStep label="1" title="Start" description="Getting started" status="completed" />
-      <WizardStep label="2" title="Continue" description="Doing something" status="completed" />
-      <WizardStep label="3" title="Extra step" description="Yes" status="active" />
-      <WizardStep label="4" title="Summary" description="Yes" />
-      <WizardStep label="5" title="Finish" description="Yes" />
+      <WizardStep label="1" title="Configure" description={showDescription ? "Setup your stuff" : undefined} status="completed" />
+      <WizardStep label="2" title="Connect services" description={showDescription ? "Github, zeit & netlify" : undefined} status="completed" />
+      <WizardStep label="3" title="Review" description={showDescription ? "Check everything" : undefined} status="active" />
+      <WizardStep label="4" title="Summary" description={showDescription ? "Nice list" : undefined} />
+      <WizardStep label="5" title="Finish" description={showDescription ? "All done!" : undefined} />
     </WizardSteps>
   )
 })
 
-stories.add('Step', () => {
+stories.addDecorator(centered)
+.add('Step', () => {
   return (
     <WizardStep
       title={text('title', 'myTitle')}

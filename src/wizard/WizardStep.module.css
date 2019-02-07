@@ -1,19 +1,31 @@
 .root {
   display: flex;
   align-items: center;
+  opacity: 0.5;
+
+  @nest &[data-status="active"] {
+    opacity: 1;
+  }
+
+  @nest &[data-status="completed"] {
+    opacity: 1;
+    opacity: 0.5;
+  }
 }
 
 .title {
   margin: 0;
   padding: 0;
-  composes: sanity-title4 from global;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1em;
 }
 
 .description {
   margin: 0;
   padding: 0;
-  color: #666;
   font-size: 0.8em;
+  opacity: 0.5;
 }
 
 .label {
@@ -21,17 +33,18 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 3em;
-  height: 3em;
-  margin-right: 1em;
-  border: 2px solid #000;
+  width: 2em;
+  height: 2em;
+  margin-right: 0.5em;
+  border: 2px solid currentColor;
 
-  @nest .root[data-status="completed"] & {
-    background-color: #000;
-    color: #fff;
+  @nest & > span {
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: 1em;
   }
 
-  @nest .root[data-status="completed"] & {
+  @nest .root[data-status="active"] & {
     background-color: #000;
     color: #fff;
   }
