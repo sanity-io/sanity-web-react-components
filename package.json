@@ -20,7 +20,7 @@
   "module": "lib/es/index.js",
   "scripts": {
     "build": "npm run clean && npm run tsc-cjs && npm run tsc-es && npm run postcss-cjs && npm run postcss-es",
-    "build-storybook": "build-storybook -c storybook",
+    "build-storybook": "build-storybook -c storybook -s ./storybook/static",
     "clean": "rimraf lib",
     "dev": "run-p storybook watch-*",
     "postcss-cjs": "mkdirp lib/cjs && postcss src/**/*.css --base src --dir lib/cjs/",
