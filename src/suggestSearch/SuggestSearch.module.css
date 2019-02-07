@@ -1,6 +1,7 @@
 .root {
   position: relative;
   height: 44px;
+  min-width: 10em;
 }
 
 .container {

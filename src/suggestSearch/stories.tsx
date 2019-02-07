@@ -6,8 +6,10 @@ import * as styles from './stories.module.css'
 import { storiesOf } from '@storybook/react'
 import { text, boolean } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
+import centered from '@storybook/addon-centered'
 
 const stories = storiesOf('Suggest search', module)
+stories.addDecorator(centered)
 
 const mockResults = [{ key: 'a' }, { key: 'b' }, { key: 'c' }, { key: 'd' }, { key: 'e' }]
 
@@ -26,6 +28,7 @@ stories.add('Suggest search', () => {
       name={text('name', 'myName')}
       query={text('query', 'myQuery')}
       onQueryChange={action('onQueryChange')}
+      onFocus={action('onFocus')}
       placeholder={text('placeholder', 'myPlaceholder')}
       open={boolean('open', false)}
       results={results}
