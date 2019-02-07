@@ -1,0 +1,70 @@
+.root {
+  position: relative;
+  margin: var(--margin-small) 0;
+
+  @nest &::before {
+    content: '';
+    display: block;
+    height: 16px;
+    background: color-mod(var(--color-gray) alpha(5%));
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  @nest &::after {
+    content: '';
+    display: block;
+    height: 16px;
+    background: color-mod(var(--color-gray) alpha(5%));
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+.block {
+
+}
+
+.annotation {
+  margin-left: -32px;
+  position: absolute;
+
+  @nest & button {
+    outline: none;
+    display: block;
+    appearance: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: -2px 0 -6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    box-sizing: border-box;
+    color: #09f;
+    font-weight: 800;
+
+    @nest &:hover {
+      background: color-mod(#09f alpha(10%));
+    }
+  }
+}
+
+.code {
+  background: color-mod(var(--color-gray) alpha(5%));
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
+  font-family: var(--font-monospace);
+  padding: 0 var(--padding-medium) calc(var(--font-small-line-height) * 1rem);
+  margin: 0;
+  overflow: hidden;
+
+  @nest & code {
+    font-family: inherit;
+  }
+
+  @nest .block:last-child & {
+    padding: 0 var(--padding-medium);
+  }
+}

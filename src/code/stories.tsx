@@ -1,14 +1,11 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { select, text } from '@storybook/addon-knobs'
-import centered from '@storybook/addon-centered'
-import Code from './Code'
+import { boolean, select, text } from '@storybook/addon-knobs'
+import { AnnotatedCodeSection, Code } from './'
 
-const stories = storiesOf('Code', module)
+const stories = storiesOf('code', module)
 
-stories.addDecorator(centered)
-
-stories.add('main', () => {
+stories.add('Code', () => {
   const language: any = select(
     'Language',
     {
@@ -28,5 +25,24 @@ stories.add('main', () => {
 
   const code = text('Code', 'console.log("Hello, world!")')
 
-  return <Code language={language} code={code} />
+  return (
+    <div style={{ padding: '4em' }}>
+      <Code language={language} code={code} inline={boolean('Inline', false)} />
+    </div>
+  )
+})
+
+stories.add('AnnotatedCode', () => {
+  return (
+    <div style={{ padding: '4em' }}>
+      <AnnotatedCodeSection
+        blocks={[
+          { key: 'a', code: '* // Everything, i.e. all documents\na\na' },
+          { key: 'a', code: '*[] // Everything with no constraints applied, i.e. all documents' },
+          { key: 'a', code: '*[_type == "movie"] // All movie documents' },
+          { key: 'a', code: '*[_id == "abc.123"] // _id equals' },
+        ]}
+      />
+    </div>
+  )
 })
