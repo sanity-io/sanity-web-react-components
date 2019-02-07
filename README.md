@@ -2,6 +2,8 @@
 
 Shared React components for web apps on Sanity.io.
 
+> NOTE: this project is at a very early stage. API and scope will change.
+
 ```sh
 npm install sanity-web-react-components
 ```
