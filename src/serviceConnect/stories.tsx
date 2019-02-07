@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { text } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
+import { boolean, text } from '@storybook/addon-knobs'
 import centered from '@storybook/addon-centered'
 
 import ServiceConnect from './ServiceConnect'
@@ -15,12 +16,15 @@ stories.add('main', () => {
     <ServiceConnect
       title={text('Title', 'Title')}
       description={text('Description', 'Description')}
+      isConnected={boolean('Is connected', false)}
       status={
         <div>
           <Avatar />
           {text('Status', 'Status')}
         </div>
       }
+      onConnectClick={action('connect')}
+      onDisconnectClick={action('disconnect')}
     />
   )
 })

@@ -6,7 +6,10 @@ import * as styles from './ServiceConnect.module.css'
 interface Props {
   title: string
   description: string
+  isConnected: boolean
   status: any
+  onConnectClick: () => void
+  onDisconnectClick: () => void
 }
 
 function ServiceConnect(props: Props) {
@@ -21,7 +24,8 @@ function ServiceConnect(props: Props) {
           <div>{props.status}</div>
         </div>
         <div className={styles.buttons}>
-          <Button>Connect</Button>
+          {!props.isConnected && <Button onClick={props.onConnectClick}>Connect</Button>}
+          {props.isConnected && <Button onClick={props.onDisconnectClick}>Disconnect</Button>}
         </div>
       </div>
     </div>
