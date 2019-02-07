@@ -11,13 +11,22 @@ stories.addDecorator(centered)
 stories.add('main', () => {
   const language: any = select(
     'Language',
-    { Text: 'text', JavaScript: 'javascript', PHP: 'php' },
+    {
+      'Plain text': 'text',
+      Bash: 'sh',
+      CSS: 'css',
+      GROQ: 'groq',
+      HTML: 'html',
+      Markdown: 'markdown',
+      JavaScript: 'javascript',
+      JSON: 'json',
+      JSX: 'jsx',
+      PHP: 'php',
+    },
     'text',
   )
 
   const code = text('Code', 'console.log("Hello, world!")')
-
-  console.log(language, code)
 
   return <Code language={language} code={code} />
 })

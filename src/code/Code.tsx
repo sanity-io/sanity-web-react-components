@@ -10,8 +10,10 @@ import * as markdownLang from 'highlight.js/lib/languages/markdown'
 import * as jsLang from 'highlight.js/lib/languages/javascript'
 import * as jsonLang from 'highlight.js/lib/languages/json'
 import * as phpLang from 'highlight.js/lib/languages/php'
+import groqLang from './languages/groq'
 
 Lowlight.registerLanguage('css', cssLang)
+Lowlight.registerLanguage('groq', groqLang)
 Lowlight.registerLanguage('html', xmlLang)
 Lowlight.registerLanguage('markdown', markdownLang)
 Lowlight.registerLanguage('javascript', jsLang)
@@ -24,10 +26,20 @@ import * as styles from './Code.module.css'
 
 interface Props {
   code: string
-  language?: 'css' | 'html' | 'markdown' | 'javascript' | 'json' | 'jsx' | 'php' | 'text' | 'sh'
+  language?:
+    | 'css'
+    | 'groq'
+    | 'html'
+    | 'markdown'
+    | 'javascript'
+    | 'json'
+    | 'jsx'
+    | 'php'
+    | 'text'
+    | 'sh'
 }
 
-const supportedLangs = ['css', 'html', 'markdown', 'javascript', 'json', 'jsx', 'php', 'sh']
+const supportedLangs = ['css', 'groq', 'html', 'markdown', 'javascript', 'json', 'jsx', 'php', 'sh']
 
 function Code(props: Props) {
   const className = `sanity-code ${styles.root}`
