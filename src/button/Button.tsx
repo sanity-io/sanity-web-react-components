@@ -4,7 +4,7 @@ import * as styles from './Button.module.css'
 interface BaseProps {
   children: any
   disabled?: boolean
-  onClick?: () => void
+  onClick?: (evt: any) => void
   size?: 'normal' | 'large' | 'small'
 }
 

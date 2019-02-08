@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 interface Props {
+  type?: 'text' | 'password'
   name: string
   size?: 'normal' | 'large' | 'small'
   value?: string
@@ -15,7 +16,7 @@ function StringInput(props: Props) {
     <input
       className={className}
       name={props.name}
-      type="text"
+      type={props.type || 'text'}
       value={props.value}
       onChange={props.onChange}
     />
