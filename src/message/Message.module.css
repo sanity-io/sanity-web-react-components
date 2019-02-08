@@ -1,0 +1,75 @@
+.root {
+  composes: root;
+  margin: 1rem 0;
+  display: flex;
+  border: 1px solid #000;
+  align-items: stretch;
+  border-radius: 4.5px;
+}
+
+.default {
+  composes: root;
+}
+
+.error {
+  composes: root;
+  border-color: var(--state-danger-color);
+  color: var(--state-danger-color);
+
+  @nest & .title {
+    color: var(--state-danger-color);
+  }
+
+  @nest & .icon {
+    padding: 1rem;
+    background-color: var(--state-danger-color);
+    color: var(--state-danger-color--inverted);
+  }
+}
+
+.success {
+  composes: root;
+  border-color: var(--state-success-color);
+  color: var(--state-success-color);
+
+  @nest & .title {
+    color: var(--state-success-color);
+  }
+
+  @nest & .icon {
+    padding: 1rem;
+    background-color: var(--state-success-color);
+    color: var(--state-success-color--inverted);
+  }
+}
+
+.warning {
+  composes: root;
+  border-color: var(--state-warning-color);
+
+  @nest & .icon {
+    padding: 1rem;
+    background-color: var(--state-warning-color);
+    color: #fff;
+  }
+}
+
+.content {
+  color: #000;
+  padding: 1rem;
+}
+
+.icon {
+  padding: 1rem 0 1rem 1rem;
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  line-height: 1em;
+}
+
+.title {
+  composes: sanity-title3 from global;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0.5rem;
+}

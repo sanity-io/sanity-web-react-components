@@ -74,5 +74,8 @@
     "react": "^16.7.0",
     "react-lowlight": "^2.0.0",
     "sanity-web-styles": "^1.0.0-alpha.2"
+  },
+  "dependencies": {
+    "react-icons": "^3.3.0"
   }
 }
