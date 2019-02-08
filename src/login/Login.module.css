@@ -3,3 +3,11 @@
   border: 1px solid var(--color-shade2);
   border-radius: 6px;
 }
+
+.externalLoginButtons {
+  display: flex;
+
+  @nest & button {
+    border-color: #000 !important;
+  }
+}

@@ -18,7 +18,8 @@ export interface Props {
 }
 
 function Login(props: Props) {
-  const externalProviders = props.providers.filter(p => p.name !== 'sanity')
+  const externalProviders = props.providers // .filter(p => p.name !== 'sanity')
+  const showLoginForm = false
 
   function handleExternalLogin(evt: MouseEvent, provider: LoginProvider) {
     evt.preventDefault()
@@ -43,41 +44,45 @@ function Login(props: Props) {
 
       <div>
         <h4>Sign in using</h4>
-        {externalProviders.map(provider => (
-          <div key={provider.name}>
-            <Button
-              type="link"
-              href={provider.url}
-              onClick={evt => handleExternalLogin(evt, provider)}
-            >
-              Sign in with {provider.title}
-            </Button>
-          </div>
-        ))}
+        <div className={styles.externalLoginButtons}>
+          {externalProviders.map(provider => (
+            <div key={provider.name}>
+              <Button
+                type="link"
+                href={provider.url}
+                onClick={evt => handleExternalLogin(evt, provider)}
+              >
+                {provider.title}
+              </Button>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <form>
-        <h4>or</h4>
+      {showLoginForm && (
+        <form>
+          <h4>or</h4>
 
-        <div>
-          <label>
-            <div>Email</div>
-            <StringInput name="email" />
-          </label>
-        </div>
-        <div>
-          <label>
-            <div>Password</div>
-            <StringInput name="password" type="password" />
-          </label>
-        </div>
+          <div>
+            <label>
+              <div>Email</div>
+              <StringInput name="email" />
+            </label>
+          </div>
+          <div>
+            <label>
+              <div>Password</div>
+              <StringInput name="password" type="password" />
+            </label>
+          </div>
 
-        <div>
-          <a href="#">Forgot password?</a>
-        </div>
+          <div>
+            <a href="#">Forgot password?</a>
+          </div>
 
-        <Button type="submit">Login with email</Button>
-      </form>
+          <Button type="submit">Login with email</Button>
+        </form>
+      )}
     </div>
   )
 }
