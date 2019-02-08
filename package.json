@@ -1,6 +1,6 @@
 {
   "name": "sanity-web-react-components",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "Shared React components for web apps on Sanity.io.",
   "author": "Sanity.io <hello@sanity.io>",
   "license": "MIT",
