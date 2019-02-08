@@ -64,7 +64,7 @@
     "react-dom": "^16.7.0",
     "react-lowlight": "^2.0.0",
     "rimraf": "^2.6.3",
-    "sanity-web-styles": "^1.0.0-alpha.2",
+    "sanity-web-styles": "^1.0.0-alpha.3",
     "storybook-addon-react-docgen": "^1.0.4",
     "ts-loader": "^5.3.3",
     "typescript": "^3.2.4"
@@ -73,7 +73,7 @@
     "highlight.js": "^9.14.2",
     "react": "^16.7.0",
     "react-lowlight": "^2.0.0",
-    "sanity-web-styles": "^1.0.0-alpha.2"
+    "sanity-web-styles": "^1.0.0-alpha.3"
   },
   "dependencies": {
     "react-icons": "^3.3.0"
