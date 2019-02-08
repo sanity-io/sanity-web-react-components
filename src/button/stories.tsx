@@ -12,9 +12,10 @@ stories.addDecorator(centered)
 stories.add('Button', () => {
   return (
     <Button
-      type={select('type', ['button', 'reset', 'submit'], 'button') as any}
       disabled={boolean('disabled', false)}
       onClick={action('click')}
+      size={select('Size', ['small', 'normal', 'large'], 'normal') as any}
+      type={select('type', ['button', 'reset', 'submit'], 'button') as any}
     >
       {text('children', 'My button')}
     </Button>

@@ -27,8 +27,9 @@ const Button = (props: Props) => {
     className: styles.root,
     onClick: !disabled ? onClick : noop,
   }
-  if (props.size === 'large') commonProps.className += styles.large
-  if (props.size === 'small') commonProps.className += styles.small
+
+  if (props.size === 'large') commonProps.className = styles.large
+  if (props.size === 'small') commonProps.className = styles.small
 
   if (props.type === 'link') {
     return (
