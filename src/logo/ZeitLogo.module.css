@@ -1,0 +1,4 @@
+.fill {
+  fill-rule: evenodd;
+  fill: url(#linear-gradient);
+}
