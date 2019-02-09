@@ -1,10 +1,23 @@
 .root {
-  border: 1px solid #eee;
+  composes: sanity-shadow-1dp from global;
+  background: var(--color-white);
+  /* border: 1px solid #eee; */
   border-radius: 5px;
 }
 
 .header {
   padding: var(--padding-medium);
+  display: flex;
+}
+
+.headerLogo {
+  width: 42px;
+  height: 42px;
+  margin-right: var(--margin-x-small);
+}
+
+.headerText {
+  flex: 1;
 
   @nest & h4 {
     margin: 0;
