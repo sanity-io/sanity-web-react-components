@@ -22,7 +22,7 @@
     "build": "npm run clean && npm run tsc-cjs && npm run tsc-es && npm run postcss-cjs && npm run postcss-es",
     "build-storybook": "build-storybook -c storybook -s ./storybook/static",
     "clean": "rimraf lib",
-    "dev": "run-p storybook watch-*",
+    "dev": "run-p watch-*",
     "postcss-cjs": "mkdirp lib/cjs && postcss src/**/*.css --base src --dir lib/cjs/",
     "postcss-es": "mkdirp lib/es && postcss src/**/*.css --base src --dir lib/es/",
     "prepublishOnly": "npm run build",
@@ -64,7 +64,7 @@
     "react-dom": "^16.7.0",
     "react-lowlight": "^2.0.0",
     "rimraf": "^2.6.3",
-    "sanity-web-styles": "^1.0.0-alpha.4",
+    "sanity-web-styles": "^1.0.0-alpha.5",
     "storybook-addon-react-docgen": "^1.0.4",
     "ts-loader": "^5.3.3",
     "typescript": "^3.2.4"
@@ -73,7 +73,7 @@
     "highlight.js": "^9.14.2",
     "react": "^16.7.0",
     "react-lowlight": "^2.0.0",
-    "sanity-web-styles": "^1.0.0-alpha.4"
+    "sanity-web-styles": "^1.0.0-alpha.5"
   },
   "dependencies": {
     "react-icons": "^3.3.0"
