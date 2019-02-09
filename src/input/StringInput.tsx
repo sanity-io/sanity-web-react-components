@@ -1,6 +1,8 @@
 import * as React from 'react'
 
 interface Props {
+  autoComplete?: boolean
+  autoCorrect?: boolean
   type?: 'text' | 'password'
   name: string
   size?: 'normal' | 'large' | 'small'
@@ -14,6 +16,8 @@ function StringInput(props: Props) {
   if (props.size === 'small') className += ` sanity-text-input--small`
   return (
     <input
+      autoComplete={props.autoComplete === false ? 'off' : undefined}
+      autoCorrect={props.autoCorrect === false ? 'off' : undefined}
       className={className}
       name={props.name}
       type={props.type || 'text'}
