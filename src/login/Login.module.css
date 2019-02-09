@@ -1,13 +1,24 @@
 .root {
+  composes: sanity-shadow-1dp from global;
+  background: var(--color-white);
   padding: var(--padding-medium);
-  border: 1px solid var(--color-shade2);
   border-radius: 6px;
 }
 
 .externalLoginButtons {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--margin-small);
 
-  @nest & button {
-    border-color: #000 !important;
+  @nest & :global(.sanity-button) {
+    width: 100%;
+
+    @nest & span {
+      margin: 0 auto;
+    }
+  }
+
+  @media (--media-min-medium) {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
