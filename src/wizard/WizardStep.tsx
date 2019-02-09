@@ -10,13 +10,14 @@ export interface Props {
 
 function WizardStep(props: Props) {
   const { label, title, description, status } = props
+
   return (
     <li className={css.root} data-status={status}>
-      <div className={css.label}>
+      <div className={css.number}>
         <span>{status === 'completed' ? '✓' : label}</span>
       </div>
       <div>
-        <h5 className={css.title}>{title}</h5>
+        <h4 className={css.title}>{title}</h4>
         <p className={css.description}>{description}</p>
       </div>
     </li>

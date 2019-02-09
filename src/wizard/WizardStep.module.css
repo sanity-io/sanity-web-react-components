@@ -13,12 +13,28 @@
   }
 }
 
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: var(--font-small-size);
+  line-height: 1;
+  width: 24px;
+  height: 24px;
+  margin-right: var(--margin-x-small);
+  border: 1px solid currentColor;
+
+  @nest .root[data-status="active"] & {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
 .title {
   margin: 0;
   padding: 0;
-  font-size: 1.2em;
-  font-weight: 500;
-  line-height: 1em;
+  font-weight: normal;
 }
 
 .description {
@@ -26,26 +42,4 @@
   padding: 0;
   font-size: 0.8em;
   opacity: 0.5;
-}
-
-.label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
-  border: 2px solid currentColor;
-
-  @nest & > span {
-    font-size: 1.2em;
-    font-weight: 500;
-    line-height: 1em;
-  }
-
-  @nest .root[data-status="active"] & {
-    background-color: #000;
-    color: #fff;
-  }
 }
