@@ -1,6 +1,8 @@
 .root {
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
   color: var(--color-gray);
-  border-top: 1px solid var(--color-shade2);
+  /* border-top: 1px solid var(--color-shade2); */
   padding: var(--padding-large) var(--padding-medium);
 
   @media (--media-min-small) {
@@ -30,11 +32,12 @@
 }
 
 .cell {
-  text-align: center;
+  /* text-align: center; */
 
   @nest & h2 {
-    font-size: var(--font-large-size);
-    line-height: var(--font-large-line-height);
+    font: inherit;
+    font-weight: 600;
+    color: var(--color-black);
     margin: 0 0 var(--padding-small);
   }
 
@@ -96,8 +99,8 @@
 }
 
 .bottomLine {
-  font-size: var(--font-small-size);
-  line-height: var(--font-small-line-height);
+  /* font-size: var(--font-small-size); */
+  /* line-height: var(--font-small-line-height); */
   text-align: center;
 
   @nest & ul {
