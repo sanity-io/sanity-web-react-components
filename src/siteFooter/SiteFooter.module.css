@@ -2,7 +2,6 @@
   font-size: var(--font-small-size);
   line-height: var(--font-small-line-height);
   color: var(--color-gray);
-  /* border-top: 1px solid var(--color-shade2); */
   padding: var(--padding-large) var(--padding-medium);
 
   @media (--media-min-small) {
@@ -32,8 +31,6 @@
 }
 
 .cell {
-  /* text-align: center; */
-
   @nest & h2 {
     font: inherit;
     font-weight: 600;
@@ -99,8 +96,6 @@
 }
 
 .bottomLine {
-  /* font-size: var(--font-small-size); */
-  /* line-height: var(--font-small-line-height); */
   text-align: center;
 
   @nest & ul {

@@ -132,6 +132,11 @@ function SiteFooter(props: Props) {
           </ul>
         </div>
       </div>
+      {!systemStatus && (
+        <div className={styles.systemStatus}>
+          <span>&#x2B24;</span> Unknown system status
+        </div>
+      )}
       {systemStatus === 'up' && (
         <div className={styles.systemUp}>
           <span>&#x2B24;</span> All systems operational
