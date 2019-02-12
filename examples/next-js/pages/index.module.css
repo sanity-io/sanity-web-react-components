@@ -1,0 +1,11 @@
+.root {
+  min-height: calc(100vh - 200px);
+  padding: var(--padding-medium);
+  box-sizing: border-box;
+  max-width: var(--width-large);
+  margin: 0 auto;
+
+  @media (--media-min-small) {
+    padding: var(--padding-large);
+  }
+}

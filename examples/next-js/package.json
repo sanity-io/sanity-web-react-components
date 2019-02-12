@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "example-next-js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "highlight.js": "^9.14.2",
+    "next": "^8.0.0",
+    "next-transpile-modules": "^2.0.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-lowlight": "^2.0.0",
+    "sanity-web-react-components": "^1.0.0-alpha.5",
+    "sanity-web-styles": "^1.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "extract-css-chunks-webpack-plugin": "^3.3.2",
+    "find-up": "^3.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.5.0"
+  }
+}
