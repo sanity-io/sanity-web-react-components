@@ -28,6 +28,7 @@ module.exports = {
         },
       },
       {
+        test: /\.css$/,
         oneOf: [
           {
             test: /\.module\.css$/,

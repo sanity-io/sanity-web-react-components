@@ -31,30 +31,34 @@ module.exports = nextConfig => {
       })
 
       config.module.rules.push({
-        test: /\.module\.css$/,
-        issuer(issuer) {
-          if (issuer.match(/pages[\\/]_document\.js$/)) {
-            throw new Error(
-              'You can not import CSS files in pages/_document.js, use pages/_app.js instead.',
-            )
-          }
-          return true
-        },
-        use: options.defaultLoaders.cssWithModules,
-      })
-
-      config.module.rules.push({
-        // Match "*.css" that is not "*.module.css"
-        test: /^(?![.*]\.module)([^.]+)\.css$/,
-        issuer(issuer) {
-          if (issuer.match(/pages[\\/]_document\.js$/)) {
-            throw new Error(
-              'You can not import CSS files in pages/_document.js, use pages/_app.js instead.',
-            )
-          }
-          return true
-        },
-        use: options.defaultLoaders.css,
+        test: /\.css$/,
+        oneOf: [
+          {
+            test: /\.module\.css$/,
+            issuer(issuer) {
+              if (issuer.match(/pages[\\/]_document\.js$/)) {
+                throw new Error(
+                  'You can not import CSS files in pages/_document.js, use pages/_app.js instead.',
+                )
+              }
+              return true
+            },
+            use: options.defaultLoaders.cssWithModules,
+          },
+          {
+            // Match "*.css" that is not "*.module.css"
+            test: /\.css$/,
+            issuer(issuer) {
+              if (issuer.match(/pages[\\/]_document\.js$/)) {
+                throw new Error(
+                  'You can not import CSS files in pages/_document.js, use pages/_app.js instead.',
+                )
+              }
+              return true
+            },
+            use: options.defaultLoaders.css,
+          },
+        ],
       })
 
       if (typeof nextConfig.webpack === 'function') {
