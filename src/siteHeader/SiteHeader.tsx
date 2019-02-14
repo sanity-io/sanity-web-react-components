@@ -31,7 +31,7 @@ function defaultRenderLink(props: LinkProps) {
   return <a {...props} />
 }
 
-function Nav(props: Props) {
+function SiteHeader(props: Props) {
   const { onHideNav, onShowNav, showNav, siteTitle } = props
   const renderLink = props.renderLink || defaultRenderLink
   return (
@@ -80,4 +80,4 @@ function Nav(props: Props) {
   )
 }
 
-export default Nav
+export default SiteHeader
