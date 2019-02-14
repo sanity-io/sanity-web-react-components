@@ -6,27 +6,31 @@ module.exports = (baseConfig, env, config) => {
     {
       test: /\.tsx?$/,
       use: 'ts-loader',
-      exclude: [/node_modules/, path.resolve(__dirname, '../dev')],
+      exclude: /node_modules/,
     },
     {
-      test: /\.module\.css$/,
-      use: [
-        'style-loader',
+      oneOf: [
         {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: '[name]__[local]___[hash:base64:5]',
-          },
+          test: /\.module\.css$/,
+          use: [
+            'style-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              },
+            },
+            'postcss-loader',
+          ],
         },
-        'postcss-loader',
+        {
+          // Match "*.css" that is not "*.module.css"
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader', 'postcss-loader'],
+        },
       ],
-    },
-    {
-      // Match "*.css" that is not "*.module.css"
-      test: /^(?![.*]\.module)([^.]+)\.css$/,
-      use: ['style-loader', 'css-loader', 'postcss-loader'],
     },
   ]
   config.resolve.extensions.push('.ts', '.tsx')
