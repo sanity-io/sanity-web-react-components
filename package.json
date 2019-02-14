@@ -21,7 +21,7 @@
   "scripts": {
     "build": "npm run clean && npm run tsc-cjs && npm run tsc-es && npm run postcss-cjs && npm run postcss-es",
     "build-storybook": "build-storybook -c storybook -s ./storybook/static",
-    "clean": "rimraf lib",
+    "clean": "rimraf lib storybook-static",
     "dev": "run-p watch-*",
     "postcss-cjs": "mkdirp lib/cjs && postcss src/**/*.css --base src --dir lib/cjs/",
     "postcss-es": "mkdirp lib/es && postcss src/**/*.css --base src --dir lib/es/",
