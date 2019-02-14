@@ -1,5 +1,6 @@
 .editorconfig
 .prettierrc
+examples
 src
 storybook
 ts
