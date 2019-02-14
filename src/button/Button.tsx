@@ -19,21 +19,28 @@ interface ButtonProps extends BaseProps {
 
 export type Props = LinkProps | ButtonProps
 
-const noop = () => void 0
-
 const Button = (props: Props) => {
   const { children, onClick, disabled } = props
-  const commonProps = {
+  const commonProps: any = {
     className: styles.root,
-    onClick: !disabled ? onClick : noop,
+    onClick: disabled
+      ? (evt: any) => {
+          if (props.type === 'link') {
+            evt.preventDefault()
+          }
+        }
+      : onClick,
   }
 
   if (props.size === 'large') commonProps.className = styles.large
   if (props.size === 'small') commonProps.className = styles.small
 
   if (props.type === 'link') {
+    if (props.disabled) {
+      commonProps['data-disabled'] = 'true'
+    }
     return (
-      <a {...commonProps} href={props.href}>
+      <a {...commonProps} href={props.disabled ? undefined : props.href}>
         <span>{children}</span>
       </a>
     )
