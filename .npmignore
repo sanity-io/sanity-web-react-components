@@ -3,5 +3,6 @@
 examples
 src
 storybook
+storybook-static
 ts
 tsconfig.json
