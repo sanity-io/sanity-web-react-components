@@ -17,10 +17,14 @@ interface Props {
     | 'php'
     | 'text'
     | 'sh'
+  mode?: 'light' | 'dark'
 }
 
 function Code(props: Props) {
-  const className = `sanity-code ${styles.root}`
+  let className = `sanity-code ${styles.root}`
+
+  if (props.mode === 'light') className += ` sanity-code--light`
+  if (props.mode === 'dark') className += ` sanity-code--dark`
 
   if (props.inline) {
     return <Lowlight className={className} inline language={props.language} code={props.code} />

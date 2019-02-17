@@ -2,4 +2,9 @@
   @nest & code {
     font-family: inherit;
   }
+
+  @nest &:global(.sanity-code--dark) {
+    background: var(--color-black);
+    color: var(--color-white);
+  }
 }

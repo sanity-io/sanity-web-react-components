@@ -2,7 +2,7 @@
   composes: root;
   margin: 1rem 0;
   display: flex;
-  border: 1px solid #000;
+  border: 1px solid var(--color-black);
   align-items: stretch;
   border-radius: 4.5px;
 }
@@ -50,12 +50,12 @@
   @nest & .icon {
     padding: 1rem;
     background-color: var(--state-warning-color);
-    color: #fff;
+    color: var(--color-white);
   }
 }
 
 .content {
-  color: #000;
+  color: var(--color-black);
   padding: 1rem;
 }
 

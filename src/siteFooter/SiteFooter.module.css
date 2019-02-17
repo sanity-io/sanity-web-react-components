@@ -1,11 +1,15 @@
 .root {
-  font-size: var(--font-small-size);
-  line-height: var(--font-small-line-height);
   color: var(--color-gray);
-  padding: var(--padding-large) var(--padding-medium);
+}
+
+.wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: var(--width-large);
+  padding: calc(var(--padding-medium) - var(--padding-small));
 
   @media (--media-min-small) {
-    padding: var(--padding-x-large) var(--padding-large);
+    padding: calc(var(--padding-large) - var(--padding-small));
   }
 }
 
@@ -13,9 +17,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: var(--padding-large);
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: var(--width-large);
+  padding: var(--padding-large) var(--padding-medium);
 
   @media (--media-min-small) {
     grid-template-columns: 1fr 1fr;
@@ -31,6 +33,9 @@
 }
 
 .cell {
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
+
   @nest & h2 {
     font: inherit;
     font-weight: 600;
@@ -62,6 +67,8 @@
 }
 
 .systemStatus {
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
   text-align: center;
   margin: var(--padding-x-large) 0;
 
@@ -96,6 +103,8 @@
 }
 
 .bottomLine {
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
   text-align: center;
 
   @nest & ul {

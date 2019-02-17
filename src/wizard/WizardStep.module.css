@@ -1,19 +1,14 @@
 .root {
   display: flex;
   align-items: center;
-  opacity: 0.5;
-
-  @nest &[data-status="active"] {
-    opacity: 1;
-  }
-
-  @nest &[data-status="completed"] {
-    opacity: 1;
-    opacity: 0.5;
-  }
+  color: var(--color-gray);
 
   @nest & + .root {
     margin-left: var(--margin-small);
+  }
+
+  @nest &[data-status="active"] {
+    color: var(--color-black);
   }
 }
 
@@ -26,11 +21,18 @@
   width: 24px;
   height: 24px;
   margin-right: var(--margin-x-small);
-  border: 1px solid currentColor;
+  border: 1px solid color-mod(var(--color-gray) alpha(50%));
 
   @nest .root[data-status="active"] & {
     background-color: var(--color-black);
     border-color: var(--color-black);
+    color: var(--color-white);
+  }
+
+  @nest .root[data-status="completed"] & {
+    font-weight: 700;
+    background-color: var(--color-gray);
+    border-color: var(--color-gray);
     color: var(--color-white);
   }
 }

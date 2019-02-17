@@ -3,7 +3,9 @@ import * as styles from './Button.module.css'
 
 interface BaseProps {
   children: any
+  color?: 'red' | 'green' | 'blue'
   disabled?: boolean
+  ghost?: boolean
   onClick?: (evt: any) => void
   size?: 'normal' | 'large' | 'small'
 }
@@ -22,7 +24,7 @@ export type Props = LinkProps | ButtonProps
 const Button = (props: Props) => {
   const { children, onClick, disabled } = props
   const commonProps: any = {
-    className: styles.root,
+    className: `${styles.root} sanity-button`,
     onClick: disabled
       ? (evt: any) => {
           if (props.type === 'link') {
@@ -32,8 +34,17 @@ const Button = (props: Props) => {
       : onClick,
   }
 
-  if (props.size === 'large') commonProps.className = styles.large
-  if (props.size === 'small') commonProps.className = styles.small
+  // Apply ghost modifier
+  if (props.ghost) commonProps.className += ` sanity-button--ghost`
+
+  // Apply size modifier
+  if (props.size === 'large') commonProps.className += ` sanity-button--large`
+  if (props.size === 'small') commonProps.className += ` sanity-button--small`
+
+  // Apply color modifier
+  if (props.color === 'red') commonProps.className += ` sanity-button--red`
+  if (props.color === 'green') commonProps.className += ` sanity-button--green`
+  if (props.color === 'blue') commonProps.className += ` sanity-button--blue`
 
   if (props.type === 'link') {
     if (props.disabled) {

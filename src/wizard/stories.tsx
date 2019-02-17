@@ -9,7 +9,7 @@ const stories = storiesOf('Wizard', module)
 
 const step: StepProps = {
   title: 'Step',
-  description: 'A small step for man'
+  description: 'A small step for man',
 }
 
 stories.add('Steps', () => {
@@ -34,33 +34,45 @@ stories.add('Steps example', () => {
   const showDescription = boolean('show description', false)
   return (
     <WizardSteps>
-      <WizardStep label="1" title="Configure" description={showDescription ? "Setup your stuff" : undefined} status="completed" />
-      <WizardStep label="2" title="Connect services" description={showDescription ? "Github, zeit & netlify" : undefined} status="completed" />
-      <WizardStep label="3" title="Review" description={showDescription ? "Check everything" : undefined} status="active" />
-      <WizardStep label="4" title="Summary" description={showDescription ? "Nice list" : undefined} />
-      <WizardStep label="5" title="Finish" description={showDescription ? "All done!" : undefined} />
+      <WizardStep
+        label="1"
+        title="Configure"
+        description={showDescription ? 'Setup your stuff' : undefined}
+        status="completed"
+      />
+      <WizardStep
+        label="2"
+        title="Connect services"
+        description={showDescription ? 'Github, zeit & netlify' : undefined}
+        status="completed"
+      />
+      <WizardStep
+        label="3"
+        title="Review"
+        description={showDescription ? 'Check everything' : undefined}
+        status="active"
+      />
+      <WizardStep
+        label="4"
+        title="Summary"
+        description={showDescription ? 'Nice list' : undefined}
+      />
+      <WizardStep
+        label="5"
+        title="Finish"
+        description={showDescription ? 'All done!' : undefined}
+      />
     </WizardSteps>
   )
 })
 
-stories.addDecorator(centered)
-.add('Step', () => {
+stories.addDecorator(centered).add('Step', () => {
   return (
     <WizardStep
       title={text('title', 'myTitle')}
       description={text('description', 'myDescription')}
       label={text('label', '1')}
-      status={
-        select(
-          'status',
-          [
-            'none',
-            'active',
-            'completed'
-          ],
-          'none'
-        )
-      }
+      status={select('status', ['none', 'active', 'completed'], 'none')}
     />
   )
 })

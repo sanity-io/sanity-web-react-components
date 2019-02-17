@@ -14,7 +14,6 @@ interface Props {
 }
 
 function ServiceConnect(props: Props) {
-  console.log(props)
   return (
     <div className={styles.root}>
       <div className={styles.header}>

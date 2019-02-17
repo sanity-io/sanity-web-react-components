@@ -1,13 +1,2 @@
 .root {
-  composes: sanity-button from global;
-}
-
-.small {
-  composes: root;
-  composes: sanity-button--small from global;
-}
-
-.large {
-  composes: root;
-  composes: sanity-button--large from global;
 }

@@ -16,7 +16,7 @@ function ZeitLogo() {
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0" />
-          <stop offset="1" stop-color="#fff" />
+          <stop offset="1" stopColor="#fff" />
         </linearGradient>
       </defs>
       <circle cx="16" cy="16" r="16" />

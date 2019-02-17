@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  background: #eee;
+  background: var(--color-shade1);
   width: 42px;
   height: 42px;
   border-radius: 50%;

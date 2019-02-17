@@ -70,7 +70,11 @@ function SiteHeader(props: Props) {
           </ul>
           <ul className={styles.userMenu}>
             <li>
-              {renderLink({ children: 'New project', className: 'sanity-button', href: '/create' })}
+              {renderLink({
+                children: 'New project',
+                className: 'sanity-button sanity-button--ghost',
+                href: '/create',
+              })}
             </li>
             <li>{renderLink({ children: 'Log in', href: 'https://manage.sanity.io' })}</li>
           </ul>

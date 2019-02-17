@@ -9,7 +9,7 @@ import { Props } from './Login'
 const stories = storiesOf('Login', module)
 
 const user = {
-  id: 'g6mUJlA5r',
+  id: 'foo',
   name: 'Marius Lundgård',
   email: 'marius@sanity.io',
   profileImage:

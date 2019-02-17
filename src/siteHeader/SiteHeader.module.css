@@ -1,12 +1,6 @@
 .root {
   position: relative;
   z-index: 100;
-  /* border-bottom: 1px solid var(--color-shade2); */
-
-  @media (--media-min-x-large) {
-    /* background: #fe0; */
-    margin-top: var(--margin-medium);
-  }
 }
 
 .wrapper {
@@ -67,7 +61,7 @@
   border: none;
   background: none;
   margin: 0;
-  padding: calc(14 / 17 / 2 * 1rem);
+  padding: calc(14 / var(--unit) / 2 * 1rem);
   outline: none;
 
   & svg {
@@ -118,7 +112,6 @@
 .menu {
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
-  font-weight: 500;
   white-space: nowrap;
   list-style: none;
   margin: 0;
