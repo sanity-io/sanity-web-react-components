@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
-import { text, select } from '@storybook/addon-knobs'
+import { boolean, select, text } from '@storybook/addon-knobs'
 import centered from '@storybook/addon-centered'
 
+import CheckboxInput from './CheckboxInput'
 import StringInput from './StringInput'
 
-const stories = storiesOf('Input', module)
+const stories = storiesOf('input', module)
 
 stories.addDecorator(centered)
 
@@ -14,9 +15,27 @@ const noop = () => void 0
 stories.add('String', () => {
   return (
     <StringInput
-      name={text('name', 'myStringInput')}
-      value={text('value', '') as string}
-      size={select('size', ['normal', 'large', 'small'], 'normal')}
+      name={text('Name', 'name')}
+      value={text('Value', '') as string}
+      size={select(
+        'Size',
+        {
+          Small: 'small',
+          Normal: 'normal',
+          Large: 'large',
+        },
+        'normal',
+      )}
+      onChange={noop}
+    />
+  )
+})
+
+stories.add('Checkbox', () => {
+  return (
+    <CheckboxInput
+      name={text('Name', 'name')}
+      checked={boolean('Checked', false) as boolean}
       onChange={noop}
     />
   )
