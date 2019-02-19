@@ -7,6 +7,5 @@
   @media (--media-min-small) {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
 }
