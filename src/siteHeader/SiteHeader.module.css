@@ -173,6 +173,11 @@
 
 .userMenu {
   composes: menu;
+
+  @media (--media-max-large) {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .showNav {
