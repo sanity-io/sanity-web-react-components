@@ -62,7 +62,7 @@
 
     @media (hover: hover) {
       @nest &:hover {
-        color: var(--color-accent);
+        color: var(--color-brand-primary);
       }
     }
   }
@@ -90,7 +90,7 @@
   composes: systemStatus;
 
   @nest & span {
-    color: #56CC7E;
+    color: var(--color-light-green);
   }
 }
 
@@ -98,7 +98,7 @@
   composes: systemStatus;
 
   @nest & span {
-    color: #EBD666;
+    color: var(--color-light-yellow);
   }
 }
 
@@ -106,7 +106,7 @@
   composes: systemStatus;
 
   @nest & span {
-    color: var(--color-accent);
+    color: var(--color-brand-primary);
   }
 }
 
@@ -130,7 +130,7 @@
 
     @media (hover: hover) {
       @nest &:hover {
-        color: var(--color-accent);
+        color: var(--color-brand-primary);
       }
     }
   }

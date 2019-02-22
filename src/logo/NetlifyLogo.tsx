@@ -14,8 +14,8 @@ function NetlifyLogo() {
           gradientTransform="matrix(0, 38.3, 44.17, 0, -1393.48, -18.34)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#20c6b7" />
-          <stop offset="1" stop-color="#4d9abf" />
+          <stop offset="0" stopColor="#20c6b7" />
+          <stop offset="1" stopColor="#4d9abf" />
         </radialGradient>
       </defs>
       <path

@@ -30,7 +30,7 @@
   @nest & a {
     display: inline-block;
     padding: var(--padding-small);
-    color: var(--color-accent);
+    color: var(--color-brand-primary);
     transition: color 200ms;
     text-decoration: none;
 
@@ -128,12 +128,12 @@
   }
 
   @nest & a.activeLink:not(:global(.sanity-button)) {
-    color: var(--color-accent);
+    color: var(--color-brand-primary);
   }
 
   @media (hover: hover) {
     @nest & a:not(:global(.sanity-button)):hover {
-      color: var(--color-accent);
+      color: var(--color-brand-primary);
     }
   }
 

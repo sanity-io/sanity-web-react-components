@@ -11,10 +11,19 @@ stories.addDecorator(centered)
 stories.add('Message', () => {
   return (
     <Message
-      title={text('title', 'Title')}
-      kind={select('kind', ['default', 'error', 'warning', 'success'], 'default')}
+      title={text('Title', 'Title')}
+      type={select(
+        'Type',
+        {
+          Default: 'default',
+          Error: 'error',
+          Warning: 'warning',
+          Success: 'success',
+        },
+        'default',
+      )}
     >
-      {text('children', 'Dont shoot the messanger')}
+      {text('Content', 'Dont shoot the messanger')}
     </Message>
   )
 })

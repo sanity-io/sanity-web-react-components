@@ -1,10 +1,13 @@
 .root {
   composes: root;
-  margin: 1rem 0;
+  margin: var(--margin-medium) 0;
+  outline: 1px solid var(--color-shade2);
+  outline-offset: -1px;
+}
+
+.inner {
   display: flex;
-  border: 1px solid var(--color-black);
   align-items: stretch;
-  border-radius: 4.5px;
 }
 
 .default {
@@ -13,63 +16,63 @@
 
 .error {
   composes: root;
-  border-color: var(--state-danger-color);
-  color: var(--state-danger-color);
+  outline-color: color-mod(var(--color-light-red) alpha(40%));
+  color: var(--color-red);
 
   @nest & .title {
-    color: var(--state-danger-color);
+    color: var(--color-red);
   }
 
   @nest & .icon {
-    padding: 1rem;
-    background-color: var(--state-danger-color);
-    color: var(--state-danger-color--inverted);
+    padding: var(--padding-medium);
+    background-color: var(--color-red);
+    color: var(--color-white);
   }
 }
 
 .success {
   composes: root;
-  border-color: var(--state-success-color);
-  color: var(--state-success-color);
+  outline-color: color-mod(var(--color-light-green) alpha(40%));
+  color: var(--color-green);
 
   @nest & .title {
-    color: var(--state-success-color);
+    color: var(--color-green);
   }
 
   @nest & .icon {
-    padding: 1rem;
-    background-color: var(--state-success-color);
-    color: var(--state-success-color--inverted);
+    padding: var(--padding-medium);
+    background-color: var(--color-green);
+    color: var(--color-white);
   }
 }
 
 .warning {
   composes: root;
-  border-color: var(--state-warning-color);
+  outline-color: color-mod(var(--color-yellow) alpha(40%));
 
   @nest & .icon {
-    padding: 1rem;
-    background-color: var(--state-warning-color);
-    color: var(--color-white);
+    padding: var(--padding-medium);
+    background-color: var(--color-yellow);
+    color: var(--color-black);
   }
 }
 
 .content {
   color: var(--color-black);
-  padding: 1rem;
+  padding: var(--padding-medium);
 }
 
 .icon {
-  padding: 1rem 0 1rem 1rem;
-  font-size: 3em;
+  background: #fe0;
+  padding: var(--padding-medium) 0 var(--padding-medium) var(--padding-medium);
+  font-size: var(--font-title1-size);
   display: flex;
   align-items: center;
-  line-height: 1em;
+  line-height: 1;
 }
 
 .title {
   composes: sanity-title3 from global;
-  margin: 0;
+  margin: 0 0 var(--margin-x-small);
   padding: 0;
-  padding-bottom: 0.5rem;
 }
