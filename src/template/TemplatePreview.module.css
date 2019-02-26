@@ -1,0 +1,38 @@
+.root {
+  display: block;
+  padding: var(--padding-small);
+  min-width: 140px;
+  border-radius: 4px;
+  text-decoration: none;
+
+  @media (hover: hover) {
+    @nest &:not(.selected):hover {
+      background: var(--color-shade1);
+    }
+  }
+}
+
+.selected {
+  composes: root;
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+.image {
+  padding-bottom: calc(9 / 16 * 100%);
+  background: var(--color-shade1);
+}
+
+.text {
+  margin-top: var(--margin-x-small);
+}
+
+.title {
+  font-weight: 400;
+}
+
+.subtitle {
+  opacity: 0.7;
+  font-size: var(--font-small-size);
+  line-height: var(--font-small-line-height);
+}
