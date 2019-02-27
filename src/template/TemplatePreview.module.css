@@ -1,6 +1,6 @@
 .root {
   display: block;
-  padding: var(--padding-small);
+  padding: var(--padding-medium);
   min-width: 140px;
   border-radius: 4px;
   text-decoration: none;
