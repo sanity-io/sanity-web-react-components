@@ -3,10 +3,13 @@ import * as React from 'react'
 import * as styles from './SiteFooter.module.css'
 
 export type Props = {
+  onEditCookieConsentClick?: () => void
+  showEditCookieConsent?: boolean
   systemStatus?: 'partially-down' | 'down' | 'up'
 }
 
 function SiteFooter(props: Props) {
+  const { onEditCookieConsentClick, showEditCookieConsent } = props
   const systemStatus = props.systemStatus || 'up'
   return (
     <footer className={styles.root}>
@@ -155,9 +158,19 @@ function SiteFooter(props: Props) {
         )}
         <div className={styles.bottomLine}>
           <ul>
-            <li>
-              <a href="">Edit cookie consent</a>
-            </li>
+            {onEditCookieConsentClick && showEditCookieConsent && (
+              <li>
+                <a
+                  href="#"
+                  onClick={evt => {
+                    evt.preventDefault()
+                    onEditCookieConsentClick()
+                  }}
+                >
+                  Edit cookie consent
+                </a>
+              </li>
+            )}
             <li>
               <a href="">Security and compliance</a>
             </li>
