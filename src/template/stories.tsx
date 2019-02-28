@@ -8,10 +8,13 @@ const stories = storiesOf('template', module)
 
 stories.addDecorator(centered)
 
+const noop = () => void 0
+
 stories.add('TemplatePreview', () => {
   return (
     <TemplatePreview
       isSelected={boolean('Selected', false)}
+      onSelect={noop}
       title="Blog"
       subtitle="Made with Gatsby"
     />
