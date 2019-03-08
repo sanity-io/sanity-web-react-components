@@ -1,14 +1,20 @@
 .root {
+  outline: none;
   display: block;
-  padding: var(--padding-medium);
-  min-width: 140px;
+  padding: calc(var(--padding-small) * 1.5);
+  margin: calc(var(--padding-small) * -1.5);
+  min-width: 10rem;
   border-radius: 4px;
   text-decoration: none;
 
   @media (hover: hover) {
-    @nest &:not(.selected):hover {
-      background: var(--color-shade1);
+    @nest &:not(.selected):not(:focus):hover {
+      background: color-mod(var(--color-gray) alpha(7%));
     }
+  }
+
+  @nest &:focus {
+    background: color-mod(var(--color-light-blue) alpha(30%));
   }
 }
 
@@ -19,20 +25,45 @@
 }
 
 .image {
+  composes: sanity-shadow-1dp from global;
   padding-bottom: calc(9 / 16 * 100%);
-  background: var(--color-shade1);
+  background: var(--color-white);
+  border-radius: 2px;
 }
 
 .text {
-  margin-top: var(--margin-x-small);
+  margin-top: var(--margin-small);
+}
+
+.meta {
+  margin: var(--margin-small) 0 0;
+  display: grid;
+  color: var(--color-gray);
+  grid-template-columns: 5rem auto;
+  grid-column-gap: var(--margin-small);
+  font-size: calc(13 / var(--unit) * 1rem);
+  line-height: calc(21 / 13);
+
+  @nest & dt {
+    padding: 0;
+  }
+
+  @nest & dd {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+  }
 }
 
 .title {
-  font-weight: 400;
+  font-size: var(--font-large-size);
+  line-height: var(--font-large-line-height);
+  font-weight: 500;
+  margin: 0 0 calc(var(--margin-x-small) / 2);
 }
 
 .subtitle {
-  opacity: 0.7;
-  font-size: var(--font-small-size);
-  line-height: var(--font-small-line-height);
+  color: var(--color-gray);
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-line-height);
 }

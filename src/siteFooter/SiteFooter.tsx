@@ -17,98 +17,100 @@ function SiteFooter(props: Props) {
         <div className={styles.grid}>
           <div className={styles.cell}>
             <h2>
-              <a href="/why-sanity">Choose Sanity</a>
+              <a href="https://www.sanity.io/why-sanity">Choose Sanity</a>
             </h2>
             <ul>
               <li>
-                <a href="/why-sanity">Why Sanity?</a>
+                <a href="https://www.sanity.io/why-sanity">Why Sanity?</a>
               </li>
               <li>
-                <a href="/why-sanity#use-cases">Use cases</a>
+                <a href="https://www.sanity.io/why-sanity#use-cases">Use cases</a>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <a href="https://www.sanity.io/contact">Contact</a>
               </li>
               <li>
-                <a href="/security">Security and compliance</a>
+                <a href="https://www.sanity.io/security">Security and compliance</a>
               </li>
               <li>
-                <a href="/legal/tos">Terms of service</a>
+                <a href="https://www.sanity.io/legal/tos">Terms of service</a>
               </li>
               <li>
-                <a href="/legal/privacy">Privacy policy</a>
+                <a href="https://www.sanity.io/legal/privacy">Privacy policy</a>
               </li>
             </ul>
           </div>
           <div className={styles.cell}>
             <h2>
-              <a href="/content-studio">Content Studio</a>
+              <a href="https://www.sanity.io/content-studio">Content Studio</a>
             </h2>
             <ul>
               <li>
-                <a href="/content-studio#built-for-developers">Built for developers</a>
+                <a href="https://www.sanity.io/content-studio#built-for-developers">
+                  Built for developers
+                </a>
               </li>
               <li>
-                <a href="/content-studio#block-editor">Portable text editor</a>
+                <a href="https://www.sanity.io/content-studio#block-editor">Portable text editor</a>
               </li>
               <li>
-                <a href="/content-studio#real-time">Real-time</a>
+                <a href="https://www.sanity.io/content-studio#real-time">Real-time</a>
               </li>
               <li>
-                <a href="/content-studio#customizable">Customizable</a>
+                <a href="https://www.sanity.io/content-studio#customizable">Customizable</a>
               </li>
               <li>
-                <a href="/content-studio#content-manager">Content manager</a>
+                <a href="https://www.sanity.io/content-studio#content-manager">Content manager</a>
               </li>
               <li>
-                <a href="/content-studio#image-pipeline">Picture perfect</a>
+                <a href="https://www.sanity.io/content-studio#image-pipeline">Picture perfect</a>
               </li>
             </ul>
           </div>
           <div className={styles.cell}>
             <h2>
-              <a href="/hosted-backend">Hosted backend</a>
+              <a href="https://www.sanity.io/hosted-backend">Hosted backend</a>
             </h2>
             <ul>
               <li>
-                <a href="/hosted-backend#groq">GROQ</a>
+                <a href="https://www.sanity.io/hosted-backend#groq">GROQ</a>
               </li>
               <li>
-                <a href="/hosted-backend#real-time">Real-time</a>
+                <a href="https://www.sanity.io/hosted-backend#real-time">Real-time</a>
               </li>
               <li>
-                <a href="/hosted-backend#enterprise-comforts">Enterprise</a>
+                <a href="https://www.sanity.io/hosted-backend#enterprise-comforts">Enterprise</a>
               </li>
               <li>
-                <a href="/hosted-backend#cli">CLI</a>
+                <a href="https://www.sanity.io/hosted-backend#cli">CLI</a>
               </li>
               <li>
-                <a href="/hosted-backend#image-pipeline">Asset pipeline</a>
+                <a href="https://www.sanity.io/hosted-backend#image-pipeline">Asset pipeline</a>
               </li>
             </ul>
           </div>
           <div className={styles.cell}>
             <h2>
-              <a href="/docs/">Documentation</a>
+              <a href="https://www.sanity.io/docs/">Documentation</a>
             </h2>
             <ul>
               <li>
-                <a href="/docs/">Introduction</a>
+                <a href="https://www.sanity.io/docs/">Introduction</a>
               </li>
               <li>
-                <a href="/docs/content-studio">Content Studio</a>
+                <a href="https://www.sanity.io/docs/content-studio">Content Studio</a>
               </li>
               <li>
-                <a href="/docs/data-store">Data store</a>
+                <a href="https://www.sanity.io/docs/data-store">Data store</a>
               </li>
               <li>
-                <a href="/docs/front-ends">Front ends</a>
+                <a href="https://www.sanity.io/docs/front-ends">Front ends</a>
               </li>
               <li>
-                <a href="/docs/asset-pipeline">Asset pipeline</a>
+                <a href="https://www.sanity.io/docs/asset-pipeline">Asset pipeline</a>
               </li>
               <li>
-                <a href="/docs/reference">Reference</a>
+                <a href="https://www.sanity.io/docs/reference">Reference</a>
               </li>
             </ul>
           </div>
@@ -138,50 +140,61 @@ function SiteFooter(props: Props) {
         </div>
         {!systemStatus && (
           <div className={styles.systemStatus}>
-            <span>&#x2B24;</span> Unknown system status
+            <a href="https://status.sanity.io/">
+              <span>&#x2B24;</span> Unknown system status
+            </a>
           </div>
         )}
         {systemStatus === 'up' && (
           <div className={styles.systemUp}>
-            <span>&#x2B24;</span> All systems operational
+            <a href="https://status.sanity.io/">
+              <span>&#x2B24;</span> All systems operational
+            </a>
           </div>
         )}
         {systemStatus === 'partially-down' && (
           <div className={styles.systemPartiallyDown}>
-            <span>&#x2B24;</span> Systems partially operational
+            <a href="https://status.sanity.io/">
+              <span>&#x2B24;</span> Partially degraded service
+            </a>
           </div>
         )}
         {systemStatus === 'down' && (
           <div className={styles.systemDown}>
-            <span>&#x2B24;</span> All systems down
+            <a href="https://status.sanity.io/">
+              <span>&#x2B24;</span> All systems down
+            </a>
           </div>
         )}
         <div className={styles.bottomLine}>
           <ul>
             {onEditCookieConsentClick && showEditCookieConsent && (
               <li>
-                <a
-                  href="#"
+                <button
                   onClick={evt => {
                     evt.preventDefault()
                     onEditCookieConsentClick()
                   }}
+                  type="button"
                 >
                   Edit cookie consent
-                </a>
+                </button>
               </li>
             )}
             <li>
-              <a href="">Security and compliance</a>
+              <a href="https://www.sanity.io/security">Security and compliance</a>
             </li>
             <li>
-              <a href="">Terms of service</a>
+              <a href="https://www.sanity.io/legal/tos">Terms of service</a>
             </li>
             <li>
-              <a href="">Privacy policy</a>
+              <a href="https://www.sanity.io/legal/privacy">Privacy policy</a>
             </li>
             <li>
-              <span>Sanity Inc. &middot; hello@sanity.io &middot; +47 400 80 600</span>
+              <span>
+                Sanity Inc. &middot; <a href="mailto:hello@sanity.io">hello@sanity.io</a> &middot;
+                +47 400 80 600
+              </span>
             </li>
           </ul>
         </div>

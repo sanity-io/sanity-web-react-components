@@ -7,6 +7,7 @@ interface Props {
   onSelect: () => void
   subtitle: string
   title: string
+  meta?: Array<{ key: string; value: any }>
 }
 
 function TemplatePreview(props: Props) {
@@ -23,6 +24,17 @@ function TemplatePreview(props: Props) {
       <div className={styles.text}>
         <div className={styles.title}>{props.title}</div>
         <div className={styles.subtitle}>{props.subtitle}</div>
+
+        {props.meta && (
+          <dl className={styles.meta}>
+            {props.meta.map((field, idx) => (
+              <React.Fragment key={String(idx)}>
+                <dd>{field.key}</dd>
+                <dt>{field.value}</dt>
+              </React.Fragment>
+            ))}
+          </dl>
+        )}
       </div>
     </a>
   )

@@ -17,6 +17,11 @@ stories.add('TemplatePreview', () => {
       onSelect={noop}
       title="Blog"
       subtitle="Made with Gatsby"
+      meta={[
+        { key: 'CMS', value: 'Sanity Studio' },
+        { key: 'Frontend', value: 'GatsbyJS' },
+        { key: 'Deployment', value: 'Netlify' },
+      ]}
     />
   )
 })
