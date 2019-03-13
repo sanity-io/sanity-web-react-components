@@ -32,4 +32,4 @@ See [API documentation](API.md).
 
 ## License
 
-MIT © [Sanity.io](https://www.sanity.io)
+[MIT](LICENSE) © [Sanity.io](https://www.sanity.io)
