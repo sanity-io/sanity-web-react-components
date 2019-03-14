@@ -15,6 +15,7 @@ const noop = () => void 0
 stories.add('String', () => {
   return (
     <StringInput
+      invalid={boolean('Invalid', false) as boolean}
       name={text('Name', 'name')}
       value={text('Value', '') as string}
       size={select(

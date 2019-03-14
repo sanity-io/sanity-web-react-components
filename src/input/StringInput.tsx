@@ -4,17 +4,20 @@ interface Props {
   autoComplete?: boolean
   autoCorrect?: boolean
   disabled?: boolean
-  type?: 'text' | 'password'
+  invalid?: boolean
   name: string
-  size?: 'normal' | 'large' | 'small'
-  value?: string
   onChange?: (evt: any) => void
+  size?: 'normal' | 'large' | 'small'
+  type?: 'text' | 'password'
+  value?: string
 }
 
 function StringInput(props: Props) {
   let className = `sanity-text-input`
   if (props.size === 'large') className += ` sanity-text-input--large`
   if (props.size === 'small') className += ` sanity-text-input--small`
+  const dataProps: { [key: string]: any } = {}
+  if (props.invalid) dataProps['data-invalid'] = true
   return (
     <input
       autoComplete={props.autoComplete === false ? 'off' : undefined}
@@ -25,6 +28,7 @@ function StringInput(props: Props) {
       type={props.type || 'text'}
       value={props.value}
       onChange={props.onChange}
+      {...dataProps}
     />
   )
 }
