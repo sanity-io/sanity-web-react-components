@@ -1,0 +1,58 @@
+.root {
+  display: grid;
+  min-height: 100%;
+  grid-template-columns: 200px auto 200px;
+
+  @nest & h1 {
+    font-size: var(--font-micro-size);
+    line-height: var(--font-micro-line-height);
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0 0 var(--margin-medium);
+  }
+}
+
+.nav {
+  min-width: 200px;
+  padding: var(--padding-medium);
+  box-sizing: border-box;
+}
+
+.storyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @nest & h2 {
+    font-size: var(--font-base-size);
+    line-height: var(--font-base-line-height);
+    margin: 0;
+  }
+
+  @nest & ul {
+    list-style: none;
+    margin: 0 0 var(--margin-small);
+    padding: 0 0 0 var(--padding-small);
+  }
+
+  @nest & a {
+    text-decoration: none;
+
+    @nest &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.stage {
+  @nest & iframe {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    border: 0;
+  }
+}
+
+.props {
+  padding: var(--padding-medium);
+}

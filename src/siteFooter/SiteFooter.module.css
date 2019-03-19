@@ -80,9 +80,13 @@
   text-align: center;
   margin: var(--padding-x-large) 0;
 
-  @nest & span {
-    position: relative;
-    top: -1px;
+  @nest & > a {
+    text-decoration: none;
+
+    @nest & > span {
+      position: relative;
+      top: -1px;
+    }
   }
 }
 
@@ -122,7 +126,17 @@
     padding: 0;
   }
 
-  @nest & li > a {
+  @nest & li > button {
+    background: none;
+    -webkit-font-smoothing: inherit;
+    appearance: none;
+    font: inherit;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  @nest & li > a, & li > button {
     color: inherit;
     text-decoration: none;
     display: inline-block;

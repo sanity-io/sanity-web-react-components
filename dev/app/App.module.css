@@ -1,0 +1,15 @@
+.root {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.nav {
+  background: #eee;
+  min-width: 200px;
+  padding: 1em;
+}
+
+.stage {
+  padding: 1em;
+}

@@ -32,7 +32,7 @@ function Code(props: Props) {
 
   return (
     <pre className={className}>
-      <Lowlight className="" inline language={props.language} code={props.code} />
+      <Lowlight className="" inline language={props.language || 'text'} code={props.code} />
     </pre>
   )
 }

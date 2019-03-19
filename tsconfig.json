@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "sourceMap": true,
     "target": "es5",
     "moduleResolution": "node",
@@ -16,7 +17,10 @@
     "noUnusedLocals": true,
     "pretty": true,
     "strict": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "paths": {
+      "dev/*": ["./dev/*"]
+    }
   },
-  "include": ["src/*/stories.tsx", "src/index.ts", "ts/types.d.ts"]
+  "include": ["dev/*", "src/index.ts", "ts/types.d.ts"]
 }

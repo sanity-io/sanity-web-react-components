@@ -1,0 +1,12 @@
+.root {
+  background: #fff;
+  height: 100%;
+}
+
+.header {
+  padding: 1em;
+}
+
+.stage {
+  height: 100%;
+}

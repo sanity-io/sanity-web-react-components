@@ -2,3 +2,13 @@
 @import url('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/xcode.min.css');
 
 @import 'sanity-web-styles';
+
+body {
+  background: var(--color-very-light-gray);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
