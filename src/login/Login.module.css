@@ -1,24 +1,49 @@
 .root {
-  composes: sanity-shadow-1dp from global;
-  background: var(--color-white);
-  padding: var(--padding-medium);
-  border-radius: 6px;
+  @nest & p {
+    font-size: var(--font-small-size);
+    line-height: var(--font-small-line-height);
+    margin: var(--margin-small) 0 0;
+
+    @nest & a {
+      color: var(--color-blue);
+      font-weight: 600;
+      text-decoration: none;
+
+      @media (hover: hover) {
+        @nest &:hover {
+          color: var(--color-gray);
+        }
+      }
+    }
+  }
 }
 
-.externalLoginButtons {
+.title {
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-line-height);
+  margin: 0 0 var(--margin-small);
+}
+
+.loginButtons {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: var(--margin-small);
 
-  @nest & :global(.sanity-button) {
-    width: 100%;
-
-    @nest & span {
-      margin: 0 auto;
-    }
-  }
-
   @media (--media-min-medium) {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.signInButtonWrapper {
+  @nest & :global(.sanity-button) {
+    width: 100%;
+  }
+
+  @nest & svg, & span {
+    vertical-align: middle;
+  }
+
+  @nest & svg {
+    margin-right: var(--margin-x-small);
   }
 }

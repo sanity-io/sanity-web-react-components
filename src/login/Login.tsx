@@ -1,30 +1,68 @@
 import * as React from 'react'
-import { Button, StringInput } from '../'
+import { Button } from '../'
+import GitHubLogo from './GitHubLogo'
+import GoogleLogo from './GoogleLogo'
 
 import * as styles from './Login.module.css'
 
 interface LoginProvider {
   name: string
-  title: string
   url: string
 }
 
+type LoginHandler = (name: string, url: string) => void
+
 export interface Props {
-  onLogin: (provider: LoginProvider) => void
+  onLogin: LoginHandler
   onLogout: () => void
   providers: LoginProvider[]
   title?: string
   user: any
 }
 
-function Login(props: Props) {
-  const externalProviders = props.providers // .filter(p => p.name !== 'sanity')
-  const showLoginForm = false
-
-  function handleExternalLogin(evt: MouseEvent, provider: LoginProvider) {
-    evt.preventDefault()
-    props.onLogin(provider)
+function LoginProviderButton({
+  name,
+  onLogin,
+  url,
+}: {
+  name: string
+  onLogin: LoginHandler
+  url: string
+}) {
+  switch (name) {
+    case 'email':
+      return (
+        <div className={styles.signInButtonWrapper}>
+          <Button ghost type="link" href={url} onClick={() => onLogin(name, url)}>
+            Sign in email &amp; password
+          </Button>
+        </div>
+      )
+    case 'github':
+      return (
+        <div className={styles.signInButtonWrapper}>
+          <Button ghost type="link" href={url} onClick={() => onLogin(name, url)}>
+            <GitHubLogo />
+            <span>Sign in with GitHub</span>
+          </Button>
+        </div>
+      )
+    case 'google':
+      return (
+        <div className={styles.signInButtonWrapper}>
+          <Button ghost type="link" href={url} onClick={() => onLogin(name, url)}>
+            <GoogleLogo />
+            <span>Sign in with Google</span>
+          </Button>
+        </div>
+      )
+    default:
+      return <div>Unknown auth provider: {name}</div>
   }
+}
+
+function Login(props: Props) {
+  const { providers } = props
 
   if (props.user) {
     return (
@@ -40,49 +78,20 @@ function Login(props: Props) {
 
   return (
     <div className={styles.root}>
-      <h3>{props.title || 'Log in to Sanity'}</h3>
-
-      <div>
-        <h4>Sign in using</h4>
-        <div className={styles.externalLoginButtons}>
-          {externalProviders.map(provider => (
-            <div key={provider.name}>
-              <Button
-                type="link"
-                href={provider.url}
-                onClick={evt => handleExternalLogin(evt, provider)}
-              >
-                {provider.title}
-              </Button>
-            </div>
-          ))}
-        </div>
+      <h3 className={styles.title}>{props.title || 'Log in to Sanity'}</h3>
+      <div className={styles.loginButtons}>
+        {providers.map(provider => (
+          <LoginProviderButton
+            key={provider.name}
+            name={provider.name}
+            onLogin={props.onLogin}
+            url={provider.url}
+          />
+        ))}
       </div>
-
-      {showLoginForm && (
-        <form>
-          <h4>or</h4>
-
-          <div>
-            <label>
-              <div>Email</div>
-              <StringInput name="email" />
-            </label>
-          </div>
-          <div>
-            <label>
-              <div>Password</div>
-              <StringInput name="password" type="password" />
-            </label>
-          </div>
-
-          <div>
-            <a href="#">Forgot password?</a>
-          </div>
-
-          <Button type="submit">Login with email</Button>
-        </form>
-      )}
+      <p>
+        Or <a href="#">create an account</a>
+      </p>
     </div>
   )
 }

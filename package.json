@@ -28,7 +28,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc-cjs": "tsc -p ts/tsconfig.cjs.json",
     "tsc-es": "tsc -p ts/tsconfig.es.json",
-    "watch-dev-server": "node dev/server.js",
+    "watch-dev-server": "node dev/start.js",
     "watch-postcss-cjs": "mkdirp lib/cjs && postcss -w src/**/*.css --base src --dir lib/cjs/",
     "watch-postcss-es": "mkdirp lib/es && postcss -w src/**/*.css --base src --dir lib/es/",
     "watch-tsc-cjs": "tsc -w -p ts/tsconfig.cjs.json",

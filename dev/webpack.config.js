@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   devtool: 'eval-source-map',
   entry: {
-    main: ['webpack-hot-middleware/client?reload=true', './dev/client.tsx'],
+    main: ['webpack-hot-middleware/client?reload=true', './dev/app/client.tsx'],
   },
   output: {
     publicPath: '/',

@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom'
 // Import base CSS before components
 import './base.css'
 
-import { App } from './app'
+import App from './App'
 
 function decode(str: string) {
   return JSON.parse(decodeURIComponent(str))

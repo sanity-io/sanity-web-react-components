@@ -12,6 +12,12 @@ const story: Story = {
       title: 'plain',
       props: [
         {
+          type: 'boolean',
+          name: 'ghost',
+          label: 'Ghost',
+          default: false,
+        },
+        {
           type: 'string',
           name: 'color',
           label: 'Color',
@@ -65,7 +71,7 @@ const story: Story = {
       render(props) {
         return (
           <CenteredWrapper>
-            <Button color={props.color} size={props.size}>
+            <Button color={props.color} ghost={props.ghost} size={props.size}>
               {props.label}
             </Button>
           </CenteredWrapper>
