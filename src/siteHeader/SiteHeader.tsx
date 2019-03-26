@@ -20,11 +20,11 @@ interface Props {
 }
 
 const menuLinks = [
-  { href: '/why-sanity', label: 'Why Sanity?' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/docs/', label: 'Docs' },
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/plugins', label: 'Plugins' },
+  { href: 'https://www.sanity.io/why-sanity', label: 'Why Sanity?' },
+  { href: 'https://www.sanity.io/blog', label: 'Blog' },
+  { href: 'https://www.sanity.io/docs', label: 'Docs' },
+  { href: 'https://www.sanity.io/pricing', label: 'Pricing' },
+  { href: 'https://www.sanity.io/plugins', label: 'Plugins' },
 ]
 
 function defaultRenderLink(props: LinkProps) {
@@ -45,7 +45,7 @@ function SiteHeader(props: Props) {
                 <span className="sanity-sr">{siteTitle || 'Sanity'}</span>
               </span>
             ),
-            href: '/',
+            href: 'https://www.sanity.io/',
           })}
         </div>
 
@@ -73,7 +73,7 @@ function SiteHeader(props: Props) {
               {renderLink({
                 children: 'New project',
                 className: 'sanity-button sanity-button--ghost',
-                href: '/create',
+                href: 'https://www.sanity.io/create',
               })}
             </li>
             <li>{renderLink({ children: 'Log in', href: 'https://manage.sanity.io' })}</li>

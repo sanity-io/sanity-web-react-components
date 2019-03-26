@@ -1,10 +1,15 @@
 import * as React from 'react'
+import { classNames } from '../lib/classNameUtils'
 
 import * as styles from './Spinner.module.css'
 
-function Spinner() {
+interface Props {
+  className?: string
+}
+
+function Spinner(props: Props) {
   return (
-    <svg className={styles.root} viewBox="0 0 40 40">
+    <svg className={classNames(styles.root, props.className)} viewBox="0 0 40 40">
       <circle cx="20" cy="20" r="19.5" />
     </svg>
   )

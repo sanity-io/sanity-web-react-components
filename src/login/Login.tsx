@@ -6,11 +6,11 @@ import GoogleLogo from './GoogleLogo'
 import * as styles from './Login.module.css'
 
 interface LoginProvider {
-  name: string
+  name: 'google' | 'github' | 'sanity'
   url: string
 }
 
-type LoginHandler = (name: string, url: string) => void
+type LoginHandler = (provider: LoginProvider) => void
 
 export interface Props {
   onLogin: LoginHandler
@@ -21,27 +21,30 @@ export interface Props {
 }
 
 function LoginProviderButton({
-  name,
   onLogin,
-  url,
+  provider,
 }: {
-  name: string
   onLogin: LoginHandler
-  url: string
+  provider: LoginProvider
 }) {
-  switch (name) {
-    case 'email':
+  const handleLogin = (evt: MouseEvent) => {
+    evt.preventDefault()
+    onLogin(provider)
+  }
+
+  switch (provider.name) {
+    case 'sanity':
       return (
         <div className={styles.signInButtonWrapper}>
-          <Button ghost type="link" href={url} onClick={() => onLogin(name, url)}>
-            Sign in email &amp; password
+          <Button ghost type="link" href={provider.url} onClick={handleLogin}>
+            Sign in with email &amp; password
           </Button>
         </div>
       )
     case 'github':
       return (
         <div className={styles.signInButtonWrapper}>
-          <Button ghost type="link" href={url} onClick={() => onLogin(name, url)}>
+          <Button ghost type="link" href={provider.url} onClick={handleLogin}>
             <GitHubLogo />
             <span>Sign in with GitHub</span>
           </Button>
@@ -50,7 +53,7 @@ function LoginProviderButton({
     case 'google':
       return (
         <div className={styles.signInButtonWrapper}>
-          <Button ghost type="link" href={url} onClick={() => onLogin(name, url)}>
+          <Button ghost type="link" href={provider.url} onClick={handleLogin}>
             <GoogleLogo />
             <span>Sign in with Google</span>
           </Button>
@@ -63,6 +66,7 @@ function LoginProviderButton({
 
 function Login(props: Props) {
   const { providers } = props
+  const showCreateAccountLink = false
 
   if (props.user) {
     return (
@@ -78,20 +82,16 @@ function Login(props: Props) {
 
   return (
     <div className={styles.root}>
-      <h3 className={styles.title}>{props.title || 'Log in to Sanity'}</h3>
       <div className={styles.loginButtons}>
         {providers.map(provider => (
-          <LoginProviderButton
-            key={provider.name}
-            name={provider.name}
-            onLogin={props.onLogin}
-            url={provider.url}
-          />
+          <LoginProviderButton key={provider.name} onLogin={props.onLogin} provider={provider} />
         ))}
       </div>
-      <p>
-        Or <a href="#">create an account</a>
-      </p>
+      {showCreateAccountLink && (
+        <p>
+          Or <a href="#">create an account</a>
+        </p>
+      )}
     </div>
   )
 }

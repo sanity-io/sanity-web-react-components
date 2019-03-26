@@ -13,6 +13,7 @@ interface BaseProps {
 interface LinkProps extends BaseProps {
   type: 'link'
   href: string
+  target?: string
 }
 
 interface ButtonProps extends BaseProps {
@@ -51,7 +52,7 @@ const Button = (props: Props) => {
       commonProps['data-disabled'] = 'true'
     }
     return (
-      <a {...commonProps} href={props.disabled ? undefined : props.href}>
+      <a {...commonProps} href={props.disabled ? undefined : props.href} target={props.target}>
         <span>{children}</span>
       </a>
     )

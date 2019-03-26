@@ -1,3 +1,6 @@
+export * from './lib/classNameUtils'
+export * from './lib/stringUtils'
+
 export * from './avatar'
 export * from './button'
 export * from './code'

@@ -12,28 +12,37 @@ const story: Story = {
   patterns: [
     {
       title: 'plain',
-      props: [],
-      render(props) {
+      props: [
+        {
+          type: 'boolean',
+          name: 'showGoogle',
+          label: 'Show Google',
+          default: true,
+        },
+      ],
+      render(props: any) {
         return (
           <CenteredWrapper>
             <div style={{ minWidth: '300px' }}>
               <Login
                 onLogin={noop}
                 onLogout={noop}
-                providers={[
-                  {
-                    name: 'github',
-                    url: '#',
-                  },
-                  {
-                    name: 'google',
-                    url: '#',
-                  },
-                  {
-                    name: 'email',
-                    url: '#',
-                  },
-                ]}
+                providers={
+                  [
+                    {
+                      name: 'github',
+                      url: '#',
+                    },
+                    props.showGoogle && {
+                      name: 'google',
+                      url: '#',
+                    },
+                    {
+                      name: 'email',
+                      url: '#',
+                    },
+                  ].filter(Boolean) as any
+                }
                 user={null}
               />
             </div>

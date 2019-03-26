@@ -124,16 +124,17 @@
   @nest & a:not(:global(.sanity-button)) {
     display: block;
     text-decoration: none;
-    color: var(--color-black);
+    color: var(--color-gray);
+    transition: color 200ms;
   }
 
   @nest & a.activeLink:not(:global(.sanity-button)) {
-    color: var(--color-brand-primary);
+    color: var(--color-black);
   }
 
   @media (hover: hover) {
     @nest & a:not(:global(.sanity-button)):hover {
-      color: var(--color-brand-primary);
+      color: var(--color-black);
     }
   }
 
