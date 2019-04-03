@@ -16,7 +16,7 @@ npm install sanity-web-react-components
 git clone git@github.com:sanity-io/sanity-web-react-components.git
 cd sanity-web-react-components
 npm install
-npm run storybook
+npm run dev
 # Open http://localhost:6006
 ```
 
