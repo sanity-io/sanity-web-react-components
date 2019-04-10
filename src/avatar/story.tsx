@@ -1,51 +1,56 @@
 import CenteredWrapper from 'dev/app/components/CenteredWrapper'
 import * as React from 'react'
-import Button from './Button'
+import Avatar from './Avatar'
 
 import { Story } from 'dev/app/types'
 
+const images = [
+  {
+    src: 'https://hcipioneers.files.wordpress.com/2015/07/dsc_0454.jpg?w=336&h=447&zoom=2',
+    alt: 'Portrait of Ted Nelson',
+  },
+  {
+    src:
+      'https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2013/07/04/100864975-89869210.530x298.jpg?v=1372946457',
+    alt: 'Portrait of Doug Engelbart',
+  },
+  {
+    src:
+      'https://lumiere-a.akamaihd.net/v1/images/character_themuppets_kermit_09279e8e.jpeg?region=0%2C0%2C300%2C300&optimize=true',
+    alt: 'Portrait of Kermit the Frog',
+  },
+]
+
 const story: Story = {
-  name: 'button',
-  title: 'Button',
+  name: 'avatar',
+  title: 'Avatar',
   patterns: [
     {
       title: 'plain',
       props: [
         {
-          type: 'boolean',
-          name: 'ghost',
-          label: 'Ghost',
-          default: false,
-        },
-        {
           type: 'string',
-          name: 'color',
-          label: 'Color',
+          name: 'image',
+          label: 'Image',
           options: [
             {
-              label: 'Default',
+              label: 'None',
               value: '',
             },
             {
-              label: 'Blue',
-              value: 'blue',
+              label: 'Ted Nelson',
+              value: 0,
             },
             {
-              label: 'Red',
-              value: 'red',
+              label: 'Doug Engelbart',
+              value: 1,
             },
             {
-              label: 'Green',
-              value: 'green',
+              label: 'Kermit',
+              value: 2,
             },
           ],
           default: '',
-        },
-        {
-          type: 'string',
-          name: 'label',
-          label: 'Label',
-          default: 'Label',
         },
         {
           type: 'string',
@@ -71,9 +76,7 @@ const story: Story = {
       render(props) {
         return (
           <CenteredWrapper>
-            <Button color={props.color} ghost={props.ghost} size={props.size}>
-              {props.label}
-            </Button>
+            <Avatar image={images[props.image]} size={props.size || undefined} />
           </CenteredWrapper>
         )
       },

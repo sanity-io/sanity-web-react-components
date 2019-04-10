@@ -1,0 +1,7 @@
+.root {
+  background: var(--color-very-light-gray);
+}
+
+.silhouette {
+  fill: color-mod(var(--color-light-gray) alpha(40%));
+}

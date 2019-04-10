@@ -1,6 +1,5 @@
 .root {
   color: var(--color-gray);
-  border-top: 1px solid var(--color-shade2);
 }
 
 .wrapper {

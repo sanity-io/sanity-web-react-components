@@ -11,15 +11,39 @@ const story: Story = {
       title: 'plain',
       props: [
         {
+          type: 'boolean',
+          name: 'invalid',
+          label: 'Invalid',
+          default: false,
+        },
+        {
           type: 'string',
           name: 'name',
           label: 'Name',
+          default: 'name',
+        },
+        {
+          type: 'string',
+          name: 'value',
+          label: 'Value',
+        },
+        {
+          type: 'string',
+          name: 'placeholder',
+          label: 'Placeholder',
+          default: 'Placeholder',
         },
       ],
       render(props) {
         return (
           <CenteredWrapper>
-            <StringInput name={props.name} />
+            <StringInput
+              invalid={props.invalid}
+              name={props.name}
+              onChange={() => void 0}
+              placeholder={props.placeholder}
+              value={props.value}
+            />
           </CenteredWrapper>
         )
       },

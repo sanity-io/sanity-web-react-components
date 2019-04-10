@@ -3,7 +3,7 @@ import ChevronDownIcon from './ChevronDownIcon'
 import HamburgerIcon from './HamburgerIcon'
 
 type Props = {
-  symbol?: 'chevron-down' | 'hamburger'
+  symbol: 'chevron-down' | 'hamburger'
 }
 
 export function Icon(props: Props) {

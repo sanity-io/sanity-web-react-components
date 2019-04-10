@@ -38,12 +38,11 @@ const story: Story = {
                       url: '#',
                     },
                     {
-                      name: 'email',
+                      name: 'sanity',
                       url: '#',
                     },
                   ].filter(Boolean) as any
                 }
-                user={null}
               />
             </div>
           </CenteredWrapper>

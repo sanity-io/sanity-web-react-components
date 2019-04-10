@@ -17,7 +17,6 @@ export interface Props {
   onLogout: () => void
   providers: LoginProvider[]
   title?: string
-  user: any
 }
 
 function LoginProviderButton({
@@ -60,25 +59,13 @@ function LoginProviderButton({
         </div>
       )
     default:
-      return <div>Unknown auth provider: {name}</div>
+      return <div>Unknown auth provider: {provider.name}</div>
   }
 }
 
 function Login(props: Props) {
   const { providers } = props
   const showCreateAccountLink = false
-
-  if (props.user) {
-    return (
-      <div className={styles.root} style={{ textAlign: 'center' }}>
-        <h1>Hi, {props.user.name}!</h1>
-        <p>
-          You are logged in with {props.user.provider} as <strong>{props.user.email}</strong>.
-        </p>
-        <Button onClick={props.onLogout}>Log out</Button>
-      </div>
-    )
-  }
 
   return (
     <div className={styles.root}>

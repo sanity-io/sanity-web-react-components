@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import { CheckboxInput } from '../../../../../'
 import { BooleanType } from '../../../lib/schema/types'
 import { OnChangeFunction } from './types'
 
@@ -14,7 +15,7 @@ function BooleanField(props: { field: BooleanType; onChange: OnChangeFunction; v
   return (
     <div className={styles.root}>
       <label>
-        <input type="checkbox" onChange={handleChange} checked={value || false} /> {label}
+        <CheckboxInput name={name} checked={value || false} onChange={handleChange} /> {label}
       </label>
     </div>
   )

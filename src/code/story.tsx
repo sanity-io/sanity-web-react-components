@@ -33,6 +33,7 @@ const story: Story = {
           type: 'text',
           name: 'text',
           label: 'Text',
+          default: "console.log('hello, world')",
         },
         {
           type: 'boolean',

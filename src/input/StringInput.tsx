@@ -7,6 +7,7 @@ interface Props {
   invalid?: boolean
   name: string
   onChange?: (evt: any) => void
+  placeholder?: string
   size?: 'normal' | 'large' | 'small'
   type?: 'text' | 'password'
   value?: string
@@ -25,9 +26,10 @@ function StringInput(props: Props) {
       className={className}
       disabled={props.disabled}
       name={props.name}
+      onChange={props.onChange}
+      placeholder={props.placeholder}
       type={props.type || 'text'}
       value={props.value}
-      onChange={props.onChange}
       {...dataProps}
     />
   )
