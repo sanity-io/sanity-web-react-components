@@ -21,10 +21,9 @@ interface Props {
 
 const menuLinks = [
   { href: 'https://www.sanity.io/why-sanity', label: 'Why Sanity?' },
-  { href: 'https://www.sanity.io/blog', label: 'Blog' },
   { href: 'https://www.sanity.io/docs', label: 'Docs' },
   { href: 'https://www.sanity.io/pricing', label: 'Pricing' },
-  { href: 'https://www.sanity.io/plugins', label: 'Plugins' },
+  { href: 'https://www.sanity.io/contact', label: 'Contact us' },
 ]
 
 function defaultRenderLink(props: LinkProps) {
