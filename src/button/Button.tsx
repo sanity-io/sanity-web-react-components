@@ -5,7 +5,8 @@ interface BaseProps {
   children: any
   color?: 'red' | 'green' | 'blue'
   disabled?: boolean
-  ghost?: boolean
+  ghost?: boolean,
+  id?: string,
   onClick?: (evt: any) => void
   size?: 'normal' | 'large' | 'small'
 }
@@ -23,9 +24,10 @@ interface ButtonProps extends BaseProps {
 export type Props = LinkProps | ButtonProps
 
 const Button = (props: Props) => {
-  const { children, onClick, disabled } = props
+  const { children, id, onClick, disabled } = props
   const commonProps: any = {
     className: `${styles.root} sanity-button`,
+    id,
     onClick: disabled
       ? (evt: any) => {
           if (props.type === 'link') {

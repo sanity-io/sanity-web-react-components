@@ -4,6 +4,7 @@ interface Props {
   autoComplete?: boolean
   autoCorrect?: boolean
   disabled?: boolean
+  id?: string,
   invalid?: boolean
   name: string
   onChange?: (evt: any) => void
@@ -25,6 +26,7 @@ function StringInput(props: Props) {
       autoCorrect={props.autoCorrect === false ? 'off' : undefined}
       className={className}
       disabled={props.disabled}
+      id={props.id}
       name={props.name}
       onChange={props.onChange}
       placeholder={props.placeholder}
