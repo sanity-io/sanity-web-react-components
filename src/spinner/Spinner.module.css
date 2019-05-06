@@ -1,35 +1,35 @@
 :root {
-  --spinner-size: 40px;
-}
+  --dash-offset: 114;
+  --duration: 1.4s;
+ }
 
 .root {
-  width: var(--spinner-size);
-  height: var(--spinner-size);
+  animation: rotator var(--duration) linear infinite;
+ }
 
-  @nest & circle {
-    fill: transparent;
-    stroke: currentColor;
-    stroke-width: 1px;
-    stroke-linecap: round;
-    stroke-dasharray: calc(3.14 * var(--spinner-size));
-    transform-origin: calc(var(--spinner-size) / 2) calc(var(--spinner-size) / 2) 0;
-    animation: spinner 2s linear infinite;
-  }
+.circle {
+  stroke-dasharray: var(--dash-offset);
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  stroke: currentColor;
+  animation: dash var(--duration) ease-in-out infinite;
 }
 
-@keyframes spinner {
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+@keyframes dash {
   0% {
-    stroke-dashoffset: calc(0.66 * var(--spinner-size));
-    transform: rotate(0deg);
+    stroke-dashoffset: var(--dash-offset);
   }
-
   50% {
-    stroke-dashoffset: calc(3.14 * var(--spinner-size));
-    transform: rotate(540deg);
+    stroke-dashoffset: 28.5;
+    transform: rotate(135deg);
   }
-
   100% {
-    stroke-dashoffset: calc(0.66 * var(--spinner-size));
-    transform: rotate(1080deg);
+    stroke-dashoffset: var(--dash-offset);
+    transform: rotate(450deg);
   }
 }

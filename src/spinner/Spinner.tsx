@@ -8,9 +8,19 @@ interface Props {
 }
 
 function Spinner(props: Props) {
+  console.log('styles', styles)
   return (
-    <svg className={classNames(styles.root, props.className)} viewBox="0 0 40 40">
-      <circle cx="20" cy="20" r="19.5" />
+    <svg className={classNames(styles.root, props.className)} viewBox="0 0 41 41" width="40px" height="40px">
+      <circle
+        className={styles.circle}
+        strokeWidth="1"
+        cx="20.5"
+        cy="20.5"
+        r="20"
+        strokeLinecap="round"
+        fill="none"
+        stroke="black"
+      />
     </svg>
   )
 }
