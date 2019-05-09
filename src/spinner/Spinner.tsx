@@ -8,7 +8,6 @@ interface Props {
 }
 
 function Spinner(props: Props) {
-  console.log('styles', styles)
   return (
     <svg className={classNames(styles.root, props.className)} viewBox="0 0 41 41" width="40px" height="40px">
       <circle
