@@ -35,7 +35,13 @@ function LoginProviderButton({
     case 'sanity':
       return (
         <div className={styles.signInButtonWrapper}>
-          <Button ghost type="link" href={provider.url} onClick={handleLogin}>
+          <Button
+            id="sanity_login_button_user_password"
+            ghost
+            type="link"
+            href={provider.url}
+            onClick={handleLogin}
+          >
             Sign in with email &amp; password
           </Button>
         </div>
@@ -43,7 +49,13 @@ function LoginProviderButton({
     case 'github':
       return (
         <div className={styles.signInButtonWrapper}>
-          <Button ghost type="link" href={provider.url} onClick={handleLogin}>
+          <Button
+            id="sanity_login_button_github"
+            ghost
+            type="link"
+            href={provider.url}
+            onClick={handleLogin}
+          >
             <GitHubLogo />
             <span>Sign in with GitHub</span>
           </Button>
@@ -52,7 +64,13 @@ function LoginProviderButton({
     case 'google':
       return (
         <div className={styles.signInButtonWrapper}>
-          <Button ghost type="link" href={provider.url} onClick={handleLogin}>
+          <Button
+            id="sanity_login_button_google"
+            ghost
+            type="link"
+            href={provider.url}
+            onClick={handleLogin}
+          >
             <GoogleLogo />
             <span>Sign in with Google</span>
           </Button>
