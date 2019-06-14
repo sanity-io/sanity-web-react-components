@@ -1,8 +1,7 @@
-import CenteredWrapper from 'dev/app/components/CenteredWrapper'
+import CenteredWrapper from '@dev/components/CenteredWrapper'
+import { Story } from '@dev/types'
 import * as React from 'react'
 import Button from './Button'
-
-import { Story } from 'dev/app/types'
 
 const story: Story = {
   name: 'button',

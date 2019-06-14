@@ -28,7 +28,7 @@ function App(props: Props) {
 }
 
 const StreamingApp = withPropsStream<Props, Props>(
-  props$ => merge(props$, location$),
+  (props$: any): any => merge(props$, location$),
   (props: Props) => <App {...props} />,
 )
 

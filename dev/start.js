@@ -1,13 +1,11 @@
 const chokidar = require('chokidar')
 const express = require('express')
-const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const webpackConfig = require('./webpack.config')
 
-const appPath = path.resolve(__dirname, './app')
 const sourcePath = path.resolve(__dirname, '../src')
 
 // HOOKS
@@ -35,7 +33,7 @@ app.use(
 app.use(webpackHotMiddleware(webpackCompiler))
 
 app.use((req, res, next) => {
-  require('./app/server').create()(req, res, next)
+  require('../src/@dev/server').create()(req, res, next)
 })
 
 app.listen(8080, err => {
@@ -49,15 +47,12 @@ function panic(err) {
 }
 
 // Setup server-side watcher
-const watcher = chokidar.watch([sourcePath, appPath])
+const watcher = chokidar.watch(sourcePath)
 watcher.on('ready', () => {
   watcher.on('all', () => {
     console.log('Clearing require cache...')
-    Object.keys(require.cache)
-      .filter(key => key.startsWith(sourcePath) || key.startsWith(appPath))
-      .forEach(key => {
-        // console.log(key)
-        delete require.cache[key]
-      })
+    Object.keys(require.cache).forEach(key => {
+      delete require.cache[key]
+    })
   })
 })

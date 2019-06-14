@@ -1,8 +1,7 @@
-import CenteredWrapper from 'dev/app/components/CenteredWrapper'
+import CenteredWrapper from '@dev/components/CenteredWrapper'
+import { Story } from '@dev/types'
 import * as React from 'react'
 import Avatar from './Avatar'
-
-import { Story } from 'dev/app/types'
 
 const images = [
   {
@@ -35,19 +34,19 @@ const story: Story = {
           options: [
             {
               label: 'None',
-              value: '',
+              value: '-1',
             },
             {
               label: 'Ted Nelson',
-              value: 0,
+              value: '0',
             },
             {
               label: 'Doug Engelbart',
-              value: 1,
+              value: '1',
             },
             {
               label: 'Kermit',
-              value: 2,
+              value: '2',
             },
           ],
           default: '',
@@ -76,7 +75,7 @@ const story: Story = {
       render(props) {
         return (
           <CenteredWrapper>
-            <Avatar image={images[props.image]} size={props.size || undefined} />
+            <Avatar image={images[Number(props.image)]} size={props.size || undefined} />
           </CenteredWrapper>
         )
       },

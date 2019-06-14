@@ -3,6 +3,11 @@ declare module '*.css' {
   export = locals
 }
 
+declare module '*.module.css' {
+  var locals: any
+  export = locals
+}
+
 declare module 'react-lowlight' {
   var lowlight: any
   export = lowlight

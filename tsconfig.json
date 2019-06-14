@@ -19,8 +19,8 @@
     "strict": true,
     "strictNullChecks": true,
     "paths": {
-      "dev/*": ["./dev/*"]
+      "@dev/*": ["./src/@dev/*"]
     }
   },
-  "include": ["dev/*", "src/*/story.tsx", "src/index.ts", "ts/types.d.ts"]
+  "include": ["src/@dev/App.tsx", "src/@dev/client.tsx", "src/*/story.tsx", "src/index.ts", "ts/types.d.ts"]
 }

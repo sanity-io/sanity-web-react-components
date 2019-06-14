@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { CheckboxInput } from '../../../../../'
+import { CheckboxInput } from '../../../../../lib/cjs'
 import { BooleanType } from '../../../lib/schema/types'
 import { OnChangeFunction } from './types'
 

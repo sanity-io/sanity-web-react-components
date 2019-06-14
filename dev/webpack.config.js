@@ -1,12 +1,19 @@
+const genericNames = require('generic-names')
 const path = require('path')
 const webpack = require('webpack')
 
+const contextPath = path.resolve(__dirname, '../')
+
+const getLocalIdent = genericNames('[name]__[local]___[hash:base64:5]', {
+  context: contextPath,
+})
+
 module.exports = {
-  context: path.resolve(__dirname, '..'),
+  context: contextPath,
   mode: 'development',
   devtool: 'eval-source-map',
   entry: {
-    main: ['webpack-hot-middleware/client?reload=true', './dev/app/client.tsx'],
+    main: ['webpack-hot-middleware/client?reload=true', './src/@dev/client.tsx'],
   },
   output: {
     publicPath: '/',
@@ -25,9 +32,13 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules: {
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+                getLocalIdent: (context, _, localName) => {
+                  return getLocalIdent(localName, context._module.resource)
+                },
+              },
               importLoaders: 1,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
             },
           },
           'postcss-loader',
@@ -42,7 +53,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      dev: __dirname,
+      '@dev': path.resolve(contextPath, './src/@dev'),
     },
     extensions: ['.tsx', '.ts', '.js'],
   },
