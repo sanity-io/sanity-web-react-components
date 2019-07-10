@@ -1,12 +1,11 @@
 import * as React from 'react'
-import { storiesOf } from '@storybook/react'
-import { select } from '@storybook/addon-knobs'
-import centered from '@storybook/addon-centered'
+import { storiesOf, addDecorator } from '@storybook/react'
+import { withKnobs, select } from '@storybook/addon-knobs'
 import Avatar from './Avatar'
 
 const stories = storiesOf('Avatar', module)
 
-stories.addDecorator(centered)
+addDecorator(withKnobs)
 
 const images = [
   {
@@ -29,10 +28,11 @@ stories.add('main', () => {
   const imageIndex: number = select(
     'Image',
     { None: -1, 'Ted Nelson': 0, 'Doug Engelbart': 1, 'Kermit the Frog': 2 },
-    -1,
+    0,
+    'props'
   )
 
-  const size: any = select('Size', { Small: 'small', Normal: 'normal', Large: 'large' }, 'normal')
+  const size: any = select('Size', { Small: 'small', Large: 'large' }, 'small', 'props')
 
   return <Avatar image={images[imageIndex]} size={size} />
 })

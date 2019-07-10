@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { boolean, select, text } from '@storybook/addon-knobs'
-import centered from '@storybook/addon-centered'
+import centered from '@storybook/addon-centered/react'
 
 import CheckboxInput from './CheckboxInput'
 import StringInput from './StringInput'

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { number, text, select, boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import centered from '@storybook/addon-centered'
+import centered from '@storybook/addon-centered/react'
 import WizardStep, { Props as StepProps } from './WizardStep'
 import WizardSteps from './WizardSteps'
 
@@ -67,12 +67,13 @@ stories.add('Steps example', () => {
 })
 
 stories.addDecorator(centered).add('Step', () => {
+  const status = select('status', ['none', 'active', 'completed'], 'none') 
   return (
     <WizardStep
       title={text('title', 'myTitle')}
       description={text('description', 'myDescription')}
       label={text('label', '1')}
-      status={select('status', ['none', 'active', 'completed'], 'none')}
+      status={status}
     />
   )
 })

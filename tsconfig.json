@@ -22,5 +22,5 @@
       "@dev/*": ["./src/@dev/*"]
     }
   },
-  "include": ["src/@dev/App.tsx", "src/@dev/client.tsx", "src/*/story.tsx", "src/index.ts", "ts/types.d.ts"]
+  "include": ["src/@dev/App.tsx", "src/@dev/client.tsx", "src/*/story.tsx", "src/*/stories.tsx", "src/index.ts", "ts/types.d.ts"]
 }
