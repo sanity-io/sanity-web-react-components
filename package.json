@@ -35,7 +35,6 @@
     "watch-tsc-es": "tsc -w -p ts/tsconfig.es.json"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
     "@types/qs": "^6.5.3",
     "@types/react": "^16.8.20",
     "@types/react-dom": "^16.8.4",
